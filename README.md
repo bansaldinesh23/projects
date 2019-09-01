@@ -5,5 +5,4 @@
 2. I can develop the same in any framework given above if required, please give me proper feedback for failure or success.
 
 3. Please arrange a callback from a related person for the understanding of my code.
-# projects
-# projects
+
