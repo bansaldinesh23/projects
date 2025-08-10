@@ -1,0 +1,4 @@
+body { background: #f8f9fc; }
+.transcript { height: 420px; overflow: auto; }
+.prewrap { white-space: pre-wrap; }
+.code-block { background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 6px; overflow-x: auto; }
