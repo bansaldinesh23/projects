@@ -3,6 +3,9 @@ const apiBase = '';
 let AGENTS = [];
 let CURRENT_SESSION = null;
 let CHAT_THREAD_ID = null;
+let HYDRATED_FROM_LOCAL = false;
+
+const LS_KEY_AGENTS = 'multi_agent_openai_saved_agents_v1';
 
 const agentsListEl = document.getElementById('agentsList');
 const agentSelectionEl = document.getElementById('agentSelection');
@@ -20,6 +23,7 @@ const nextTurnBtn = document.getElementById('nextTurnBtn');
 const auto5Btn = document.getElementById('auto5Btn');
 const userMessageEl = document.getElementById('userMessage');
 const sendUserMsgBtn = document.getElementById('sendUserMsgBtn');
+const sessionFileInput = document.getElementById('sessionFile');
 
 const transcriptEl = document.getElementById('sessionTranscript');
 
@@ -28,6 +32,7 @@ const chatAgentSelect = document.getElementById('chatAgentSelect');
 const chatInput = document.getElementById('chatInput');
 const chatSendBtn = document.getElementById('chatSendBtn');
 const chatTranscript = document.getElementById('chatTranscript');
+const chatFileInput = document.getElementById('chatFile');
 
 function toast(msg, type = 'info') {
   const alert = document.createElement('div');
@@ -37,12 +42,64 @@ function toast(msg, type = 'info') {
   setTimeout(() => alert.remove(), 3000);
 }
 
+function loadSavedAgents() {
+  try {
+    const raw = localStorage.getItem(LS_KEY_AGENTS);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (_e) {
+    return [];
+  }
+}
+
+function saveAgentsToLocal(defs) {
+  try {
+    localStorage.setItem(LS_KEY_AGENTS, JSON.stringify(defs || []));
+  } catch (_e) {
+    // ignore storage errors
+  }
+}
+
+function upsertSavedAgent(def) {
+  const defs = loadSavedAgents();
+  const idx = defs.findIndex(a => a.name === def.name);
+  if (idx >= 0) defs[idx] = def; else defs.push(def);
+  saveAgentsToLocal(defs);
+}
+
+function removeSavedAgentByName(name) {
+  const defs = loadSavedAgents();
+  saveAgentsToLocal(defs.filter(a => a.name !== name));
+}
+
 async function fetchAgents() {
   const res = await fetch(`${apiBase}/api/agents`);
   AGENTS = await res.json();
   renderAgents();
   renderAgentSelection();
   renderChatAgentSelect();
+  // Hydrate from localStorage once if server has no agents
+  if (!HYDRATED_FROM_LOCAL && AGENTS.length === 0) {
+    HYDRATED_FROM_LOCAL = true;
+    const saved = loadSavedAgents();
+    if (saved.length) {
+      for (const def of saved) {
+        try {
+          await fetch(`${apiBase}/api/agents`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: def.name, model: def.model, systemPrompt: def.systemPrompt })
+          });
+        } catch (_e) {}
+      }
+      const r = await fetch(`${apiBase}/api/agents`);
+      AGENTS = await r.json();
+      renderAgents();
+      renderAgentSelection();
+      renderChatAgentSelect();
+    }
+  }
 }
 
 function renderAgents() {
@@ -69,6 +126,7 @@ function renderAgents() {
     const btn = col.querySelector('button');
     btn.addEventListener('click', async () => {
       await fetch(`${apiBase}/api/agents/${agent.id}`, { method: 'DELETE' });
+      removeSavedAgentByName(agent.name);
       fetchAgents();
     });
     agentsListEl.appendChild(col);
@@ -111,6 +169,7 @@ createAgentBtn.addEventListener('click', async () => {
     body: JSON.stringify({ name, model, systemPrompt })
   });
   if (!res.ok) return toast('Failed to create agent', 'error');
+  upsertSavedAgent({ name, model, systemPrompt });
   agentNameEl.value = '';
   agentSystemEl.value = '';
   await fetchAgents();
@@ -153,11 +212,25 @@ sendUserMsgBtn.addEventListener('click', async () => {
 async function stepSession(steps = 1, userMessage) {
   if (!CURRENT_SESSION) return;
   toggleActionButtons(false);
-  const res = await fetch(`${apiBase}/api/sessions/${CURRENT_SESSION.id}/step`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ steps, userMessage })
-  });
+  const hasFile = sessionFileInput && sessionFileInput.files && sessionFileInput.files[0];
+  let res;
+  if (hasFile) {
+    const form = new FormData();
+    form.append('steps', String(steps));
+    if (userMessage) form.append('userMessage', userMessage);
+    form.append('file', sessionFileInput.files[0]);
+    res = await fetch(`${apiBase}/api/sessions/${CURRENT_SESSION.id}/step`, {
+      method: 'POST',
+      body: form
+    });
+    sessionFileInput.value = '';
+  } else {
+    res = await fetch(`${apiBase}/api/sessions/${CURRENT_SESSION.id}/step`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ steps, userMessage })
+    });
+  }
   toggleActionButtons(true);
   if (!res.ok) return toast('Failed to step session', 'error');
   const data = await res.json();
@@ -205,11 +278,25 @@ chatSendBtn.addEventListener('click', async () => {
   chatInput.value = '';
 
   try {
-    const res = await fetch(`${apiBase}/api/agents/${agentId}/chat`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userMessage: msg, threadId: CHAT_THREAD_ID || undefined })
-    });
+    const hasFile = chatFileInput && chatFileInput.files && chatFileInput.files[0];
+    let res;
+    if (hasFile) {
+      const form = new FormData();
+      form.append('userMessage', msg);
+      if (CHAT_THREAD_ID) form.append('threadId', CHAT_THREAD_ID);
+      form.append('file', chatFileInput.files[0]);
+      res = await fetch(`${apiBase}/api/agents/${agentId}/chat`, {
+        method: 'POST',
+        body: form
+      });
+      chatFileInput.value = '';
+    } else {
+      res = await fetch(`${apiBase}/api/agents/${agentId}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userMessage: msg, threadId: CHAT_THREAD_ID || undefined })
+      });
+    }
     if (!res.ok) throw new Error('Request failed');
     const data = await res.json();
     CHAT_THREAD_ID = data.threadId;

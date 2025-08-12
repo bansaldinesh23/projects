@@ -12,11 +12,13 @@ A minimal JavaScript project that integrates the OpenAI API and lets you create 
 - Round‑robin turns among agents with one‑click stepping or auto 5 turns
 - Send user messages into the session at any time
 - Clean Bootstrap UI
-- In‑memory storage (no database)
+- **Persistent MongoDB storage** (agents, sessions, chat history)
+- **File upload support** for images and PDFs
 
 ## Prerequisites
 
 - Node.js 18+
+- MongoDB 5.0+
 - An OpenAI API key
 
 ## Setup
@@ -26,42 +28,62 @@ A minimal JavaScript project that integrates the OpenAI API and lets you create 
    ```bash
    npm install
    ```
-3. Configure environment:
+3. Start MongoDB:
    ```bash
-   cp .env.example .env
-   # edit .env and set OPENAI_API_KEY
+   # macOS with Homebrew
+   brew services start mongodb-community
+   
+   # Or run manually
+   mongod --dbpath /usr/local/var/mongodb
    ```
-4. Start the server:
+4. Configure environment:
+   ```bash
+   # Create .env file with:
+   OPENAI_API_KEY=your_openai_api_key_here
+   MONGODB_URI=mongodb://localhost:27017
+   MONGODB_DB=multi_agent_openai
+   PORT=3000
+   ```
+5. Start the server:
    ```bash
    npm run dev
    ```
-5. Open the app:
+6. Open the app:
    - `http://localhost:3000`
 
 ## How it works
 
-- Backend: `Express` server exposing REST endpoints
+- Backend: `Express` server with MongoDB persistence
   - `POST /api/agents` create agent
   - `GET /api/agents` list agents
   - `DELETE /api/agents/:id` delete agent
   - `POST /api/sessions` create session with `agentIds` and optional `task`
   - `POST /api/sessions/:id/step` advance the session (optionally `{ userMessage, steps }`)
+  - File uploads supported for images and PDFs
 - Each step:
   - The next agent (round‑robin) receives the current transcript as context
   - The agent's system instructions are prepended as a system message
   - The reply is generated via OpenAI Chat Completions and appended to the transcript
+  - All data is persisted to MongoDB collections
+
+## Database Collections
+
+- `agents`: Agent definitions (name, model, systemPrompt)
+- `sessions`: Multi-agent session data with message history
+- `chat_threads`: Individual agent chat conversations
 
 ## Notes
 
-- This is a demo; agents and sessions are stored in memory and reset on restart.
-- You can change default temperature and models in `server.js`.
-- For persistence, add a database and replace the in‑memory maps.
-- For streaming responses, switch to the streaming API and update the frontend renderer.
+- Agents and sessions are now persisted in MongoDB and survive server restarts
+- File uploads support images (PNG, JPG, JPEG, GIF, WebP) and PDFs
+- For production, ensure MongoDB is properly secured and backed up
+- For streaming responses, switch to the streaming API and update the frontend renderer
 
 ## Security
 
-- Do not expose your API key publicly.
-- This server serves a static frontend and proxies API calls; deploy behind a proper reverse proxy for production.
+- Do not expose your API key publicly
+- This server serves a static frontend and proxies API calls; deploy behind a proper reverse proxy for production
+- MongoDB should be configured with authentication in production
 
 ## License
 

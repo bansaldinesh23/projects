@@ -3,11 +3,40 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { nanoid } from 'nanoid';
 import axios from 'axios';
+import multer from 'multer';
+import { MongoClient } from 'mongodb';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+const upload = multer({ limits: { fileSize: 10 * 1024 * 1024 } });
+
+// MongoDB connection
+let db;
+const mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+const dbName = process.env.MONGODB_DB || 'multi_agent_openai';
+
+async function connectDB() {
+  try {
+    const client = new MongoClient(mongoUrl);
+    await client.connect();
+    db = client.db(dbName);
+    console.log('Connected to MongoDB');
+    
+    // Create indexes for better performance
+    await db.collection('agents').createIndex({ name: 1 }, { unique: true });
+    await db.collection('sessions').createIndex({ id: 1 });
+    await db.collection('chat_threads').createIndex({ id: 1 });
+    await db.collection('chat_threads').createIndex({ agentId: 1 });
+  } catch (err) {
+    console.error('MongoDB connection failed:', err);
+    process.exit(1);
+  }
+}
+
+// Initialize DB connection
+connectDB();
 
 // Basic validation
 if (!process.env.OPENAI_API_KEY) {
@@ -18,10 +47,10 @@ app.use(cors());
 app.use(express.json({ limit: '2mb' }));
 app.use(express.static('public'));
 
-// In-memory stores (for demo)
-const agents = new Map(); // id -> { id, name, model, systemPrompt }
-const sessions = new Map(); // id -> { id, agentIds, messages, currentAgentIndex }
-const agentChats = new Map(); // threadId -> { id, agentId, messages }
+// MongoDB collections (replacing in-memory stores)
+// const agents = new Map(); // id -> { id, name, model, systemPrompt }
+// const sessions = new Map(); // id -> { id, agentIds, messages, currentAgentIndex }
+// const agentChats = new Map(); // threadId -> { id, agentId, messages }
 
 // Helpers
 function makeSystemMessageForAgent(agent) {
@@ -52,35 +81,74 @@ async function callOpenAIChat({ model, messages, temperature = 0.6 }) {
   return data;
 }
 
+/**
+ * Convert an uploaded file into content suitable for OpenAI messages.
+ * - For images (png, jpg, jpeg, gif, webp), returns an image_url content item using a data URL.
+ * - For PDFs, extracts text and returns a text content item.
+ */
+async function fileToMessageContent(file) {
+  if (!file) return null;
+  const mime = file.mimetype || '';
+  const base64 = file.buffer.toString('base64');
+
+  const isImage = /^image\/(png|jpe?g|gif|webp)$/i.test(mime);
+  if (isImage) {
+    const dataUrl = `data:${mime};base64,${base64}`;
+    // OpenAI multimodal message format (image_url)
+    return { type: 'image_url', image_url: { url: dataUrl } };
+  }
+
+  if (mime === 'application/pdf') {
+    try {
+      const { default: pdfParse } = await import('pdf-parse');
+      const parsed = await pdfParse(file.buffer);
+      const text = parsed.text || '';
+      return { type: 'text', text: `Extracted text from uploaded PDF (first 20k chars):\n\n${text.slice(0, 20000)}` };
+    } catch (err) {
+      const nodeVersion = process.versions?.node || 'unknown';
+      return { type: 'text', text: `Could not parse PDF on this server (Node ${nodeVersion}). Please upgrade to Node 18+ or try a different PDF. Error: ${String(err && err.message || err)}` };
+    }
+  }
+
+  // Fallback: treat as attachment reference
+  return { type: 'text', text: `Received unsupported file type (${mime}).` };
+}
+
 // Routes: Agents
-app.get('/api/agents', (req, res) => {
-  res.json(Array.from(agents.values()));
+app.get('/api/agents', async (req, res) => {
+  const agentsCollection = db.collection('agents');
+  const agents = await agentsCollection.find({}).toArray();
+  res.json(agents);
 });
 
-app.post('/api/agents', (req, res) => {
+app.post('/api/agents', async (req, res) => {
   const { name, systemPrompt, model } = req.body || {};
   if (!name) return res.status(400).json({ error: 'name is required' });
   const id = nanoid();
   const agent = { id, name, systemPrompt: systemPrompt || '', model: model || 'gpt-4o-mini' };
-  agents.set(id, agent);
+  const agentsCollection = db.collection('agents');
+  await agentsCollection.insertOne(agent);
   res.json(agent);
 });
 
-app.delete('/api/agents/:id', (req, res) => {
+app.delete('/api/agents/:id', async (req, res) => {
   const { id } = req.params;
-  if (!agents.has(id)) return res.status(404).json({ error: 'agent not found' });
-  agents.delete(id);
+  const agentsCollection = db.collection('agents');
+  const result = await agentsCollection.deleteOne({ id });
+  if (result.deletedCount === 0) return res.status(404).json({ error: 'agent not found' });
   res.json({ ok: true });
 });
 
 // Routes: Sessions (multi-agent)
-app.post('/api/sessions', (req, res) => {
+app.post('/api/sessions', async (req, res) => {
   const { agentIds, task } = req.body || {};
   if (!Array.isArray(agentIds) || agentIds.length === 0) {
     return res.status(400).json({ error: 'agentIds must be a non-empty array' });
   }
   for (const id of agentIds) {
-    if (!agents.has(id)) return res.status(400).json({ error: `unknown agent id: ${id}` });
+    const agentsCollection = db.collection('agents');
+    const agent = await agentsCollection.findOne({ id });
+    if (!agent) return res.status(400).json({ error: `unknown agent id: ${id}` });
   }
   const id = nanoid();
   const session = {
@@ -89,23 +157,32 @@ app.post('/api/sessions', (req, res) => {
     messages: task ? [{ role: 'user', content: task }] : [],
     currentAgentIndex: 0
   };
-  sessions.set(id, session);
+  const sessionsCollection = db.collection('sessions');
+  await sessionsCollection.insertOne(session);
   res.json(sessionToDto(session));
 });
 
-app.get('/api/sessions/:id', (req, res) => {
-  const s = sessions.get(req.params.id);
-  if (!s) return res.status(404).json({ error: 'session not found' });
-  res.json(sessionToDto(s));
+app.get('/api/sessions/:id', async (req, res) => {
+  const sessionsCollection = db.collection('sessions');
+  const session = await sessionsCollection.findOne({ id: req.params.id });
+  if (!session) return res.status(404).json({ error: 'session not found' });
+  res.json(sessionToDto(session));
 });
 
-app.post('/api/sessions/:id/step', async (req, res) => {
-  const s = sessions.get(req.params.id);
-  if (!s) return res.status(404).json({ error: 'session not found' });
+app.post('/api/sessions/:id/step', upload.single('file'), async (req, res) => {
+  const sessionsCollection = db.collection('sessions');
+  const session = await sessionsCollection.findOne({ id: req.params.id });
+  if (!session) return res.status(404).json({ error: 'session not found' });
 
   const { userMessage, steps } = req.body || {};
-  if (userMessage) {
-    s.messages.push({ role: 'user', content: userMessage });
+  const attachmentContent = await fileToMessageContent(req.file);
+
+  if (userMessage || attachmentContent) {
+    if (attachmentContent) {
+      session.messages.push({ role: 'user', content: [ { type: 'text', text: String(userMessage || '') }, attachmentContent ] });
+    } else {
+      session.messages.push({ role: 'user', content: String(userMessage) });
+    }
   }
 
   const runSteps = Math.max(1, Math.min(steps || 1, 10)); // cap to 10 per call
@@ -113,11 +190,12 @@ app.post('/api/sessions/:id/step', async (req, res) => {
   try {
     let lastReply = null;
     for (let i = 0; i < runSteps; i++) {
-      const agentId = s.agentIds[s.currentAgentIndex % s.agentIds.length];
-      const agent = agents.get(agentId);
+      const agentId = session.agentIds[session.currentAgentIndex % session.agentIds.length];
+      const agentsCollection = db.collection('agents');
+      const agent = await agentsCollection.findOne({ id: agentId });
       if (!agent) throw new Error(`Agent ${agentId} not found`);
 
-      const messages = [makeSystemMessageForAgent(agent), ...s.messages];
+      const messages = [makeSystemMessageForAgent(agent), ...session.messages];
 
       const completion = await callOpenAIChat({
         model: agent.model || 'gpt-4o-mini',
@@ -126,12 +204,13 @@ app.post('/api/sessions/:id/step', async (req, res) => {
       });
       const content = completion.choices?.[0]?.message?.content || '';
       const assistantMsg = { role: 'assistant', content, agentId };
-      s.messages.push(assistantMsg);
+      session.messages.push(assistantMsg);
       lastReply = assistantMsg;
-      s.currentAgentIndex = (s.currentAgentIndex + 1) % s.agentIds.length;
+      session.currentAgentIndex = (session.currentAgentIndex + 1) % session.agentIds.length;
     }
 
-    res.json({ session: sessionToDto(s), lastReply });
+    await sessionsCollection.updateOne({ id: session.id }, { $set: session });
+    res.json({ session: sessionToDto(session), lastReply });
   } catch (err) {
     console.error(err?.response?.data || err);
     res.status(500).json({ error: 'openai_error', detail: err?.response?.data || String(err.message || err) });
@@ -139,24 +218,31 @@ app.post('/api/sessions/:id/step', async (req, res) => {
 });
 
 // Routes: Single-agent chat threads
-app.post('/api/agents/:id/chat', async (req, res) => {
-  const agentId = req.params.id;
-  const agent = agents.get(agentId);
+app.post('/api/agents/:id/chat', upload.single('file'), async (req, res) => {
+  const agentsCollection = db.collection('agents');
+  const agent = await agentsCollection.findOne({ id: req.params.id });
   if (!agent) return res.status(404).json({ error: 'agent not found' });
 
-  const { userMessage, threadId } = req.body || {};
-  if (!userMessage) return res.status(400).json({ error: 'userMessage is required' });
+  const { threadId } = req.body || {};
+  const userMessage = (req.body && req.body.userMessage) || '';
+  const attachmentContent = await fileToMessageContent(req.file);
+  if (!userMessage && !attachmentContent) return res.status(400).json({ error: 'userMessage or file is required' });
 
   let thread = null;
   if (threadId) {
-    thread = agentChats.get(threadId);
+    const agentChatsCollection = db.collection('chat_threads');
+    thread = await agentChatsCollection.findOne({ id: threadId });
     if (!thread) return res.status(404).json({ error: 'thread not found' });
-    if (thread.agentId !== agentId) return res.status(400).json({ error: 'thread belongs to another agent' });
+    if (thread.agentId !== agent.id) return res.status(400).json({ error: 'thread belongs to another agent' });
   } else {
-    thread = { id: nanoid(), agentId, messages: [] };
+    thread = { id: nanoid(), agentId: agent.id, messages: [] };
   }
 
-  thread.messages.push({ role: 'user', content: userMessage });
+  if (attachmentContent) {
+    thread.messages.push({ role: 'user', content: [ { type: 'text', text: String(userMessage || '') }, attachmentContent ] });
+  } else {
+    thread.messages.push({ role: 'user', content: String(userMessage) });
+  }
 
   try {
     const messages = [makeSystemMessageForAgent(agent), ...thread.messages];
@@ -169,7 +255,14 @@ app.post('/api/agents/:id/chat', async (req, res) => {
     const assistantMsg = { role: 'assistant', content };
     thread.messages.push(assistantMsg);
 
-    agentChats.set(thread.id, thread);
+    const agentChatsCollection = db.collection('chat_threads');
+    if (threadId) {
+      // Update existing thread
+      await agentChatsCollection.updateOne({ id: thread.id }, { $set: thread });
+    } else {
+      // Insert new thread
+      await agentChatsCollection.insertOne(thread);
+    }
     res.json({ threadId: thread.id, messages: thread.messages, reply: assistantMsg });
   } catch (err) {
     console.error(err?.response?.data || err);
@@ -177,11 +270,13 @@ app.post('/api/agents/:id/chat', async (req, res) => {
   }
 });
 
-app.get('/api/agents/:id/chat/:threadId', (req, res) => {
+app.get('/api/agents/:id/chat/:threadId', async (req, res) => {
   const { id, threadId } = req.params;
-  const agent = agents.get(id);
+  const agentsCollection = db.collection('agents');
+  const agent = await agentsCollection.findOne({ id });
   if (!agent) return res.status(404).json({ error: 'agent not found' });
-  const thread = agentChats.get(threadId);
+  const agentChatsCollection = db.collection('chat_threads');
+  const thread = await agentChatsCollection.findOne({ id: threadId });
   if (!thread) return res.status(404).json({ error: 'thread not found' });
   if (thread.agentId !== id) return res.status(400).json({ error: 'thread belongs to another agent' });
   res.json(thread);
