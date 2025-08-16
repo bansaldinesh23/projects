@@ -5,12 +5,27 @@ import { nanoid } from 'nanoid';
 import axios from 'axios';
 import multer from 'multer';
 import { MongoClient } from 'mongodb';
+import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import fetch from 'node-fetch';
+
+// Polyfill fetch for Node 14
+if (!globalThis.fetch) {
+  globalThis.fetch = fetch;
+}
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 const upload = multer({ limits: { fileSize: 10 * 1024 * 1024 } });
+
+// AI Provider clients
+const anthropic = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+const googleAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 // MongoDB connection
 let db;
@@ -82,6 +97,97 @@ async function callOpenAIChat({ model, messages, temperature = 0.6 }) {
 }
 
 /**
+ * Unified chat function that supports multiple AI providers
+ */
+async function callAIChat({ provider, model, messages, temperature = 0.6 }) {
+  try {
+    switch (provider) {
+      case 'openai':
+        return await callOpenAIChat({ model, messages, temperature });
+      
+      case 'anthropic':
+        const claudeResponse = await anthropic.messages.create({
+          model: model || 'claude-3-haiku-20240307',
+          max_tokens: 4000,
+          temperature: temperature,
+          messages: messages.map(msg => ({
+            role: msg.role === 'assistant' ? 'assistant' : 'user',
+            content: Array.isArray(msg.content) ? msg.content.map(c => c.type === 'text' ? c.text : c.image_url?.url).join('\n') : msg.content
+          }))
+        });
+        return {
+          choices: [{
+            message: {
+              content: claudeResponse.content[0].text
+            }
+          }]
+        };
+      
+      case 'google':
+        const geminiModel = googleAI.getGenerativeModel({ model: model || 'gemini-1.5-flash' });
+        const geminiResponse = await geminiModel.generateContent({
+          contents: messages.map(msg => ({
+            role: msg.role === 'assistant' ? 'model' : 'user',
+            parts: Array.isArray(msg.content) ? 
+              msg.content.map(c => c.type === 'text' ? { text: c.text } : { inlineData: { data: c.image_url.url.split(',')[1], mimeType: 'image/jpeg' } }) :
+              [{ text: msg.content }]
+          })),
+          generationConfig: { temperature: temperature }
+        });
+        return {
+          choices: [{
+            message: {
+              content: geminiResponse.response.text()
+            }
+          }]
+        };
+      
+      case 'deepseek':
+        const deepseekResponse = await axios.post('https://api.deepseek.com/v1/chat/completions', {
+          model: model || 'deepseek-chat',
+          messages: messages.map(msg => ({
+            role: msg.role,
+            content: Array.isArray(msg.content) ? 
+              msg.content.map(c => c.type === 'text' ? c.text : c.image_url?.url).join('\n') : 
+              msg.content
+          })),
+          temperature: temperature
+        }, {
+          headers: {
+            'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+            'Content-Type': 'application/json'
+          }
+        });
+        return deepseekResponse.data;
+      
+      case 'perplexity':
+        const perplexityResponse = await axios.post('https://api.perplexity.ai/api/v1/chat/completions', {
+          model: model || 'llama-3.1-8b-instant',
+          messages: messages.map(msg => ({
+            role: msg.role,
+            content: Array.isArray(msg.content) ? 
+              msg.content.map(c => c.type === 'text' ? c.text : c.image_url?.url).join('\n') : 
+              msg.content
+          })),
+          temperature: temperature
+        }, {
+          headers: {
+            'Authorization': `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+            'Content-Type': 'application/json'
+          }
+        });
+        return perplexityResponse.data;
+      
+      default:
+        throw new Error(`Unsupported provider: ${provider}`);
+    }
+  } catch (error) {
+    console.error(`Error calling ${provider} API:`, error);
+    throw error;
+  }
+}
+
+/**
  * Convert an uploaded file into content suitable for OpenAI messages.
  * - For images (png, jpg, jpeg, gif, webp), returns an image_url content item using a data URL.
  * - For PDFs, extracts text and returns a text content item.
@@ -122,10 +228,16 @@ app.get('/api/agents', async (req, res) => {
 });
 
 app.post('/api/agents', async (req, res) => {
-  const { name, systemPrompt, model } = req.body || {};
+  const { name, systemPrompt, model, provider } = req.body || {};
   if (!name) return res.status(400).json({ error: 'name is required' });
   const id = nanoid();
-  const agent = { id, name, systemPrompt: systemPrompt || '', model: model || 'gpt-4o-mini' };
+  const agent = { 
+    id, 
+    name, 
+    systemPrompt: systemPrompt || '', 
+    model: model || 'gpt-4o-mini',
+    provider: provider || 'openai'
+  };
   const agentsCollection = db.collection('agents');
   await agentsCollection.insertOne(agent);
   res.json(agent);
@@ -197,7 +309,8 @@ app.post('/api/sessions/:id/step', upload.single('file'), async (req, res) => {
 
       const messages = [makeSystemMessageForAgent(agent), ...session.messages];
 
-      const completion = await callOpenAIChat({
+      const completion = await callAIChat({
+        provider: agent.provider, // Use the agent's provider
         model: agent.model || 'gpt-4o-mini',
         messages,
         temperature: 0.6,
@@ -246,7 +359,8 @@ app.post('/api/agents/:id/chat', upload.single('file'), async (req, res) => {
 
   try {
     const messages = [makeSystemMessageForAgent(agent), ...thread.messages];
-    const completion = await callOpenAIChat({
+    const completion = await callAIChat({
+      provider: agent.provider, // Use the agent's provider
       model: agent.model || 'gpt-4o-mini',
       messages,
       temperature: 0.6,

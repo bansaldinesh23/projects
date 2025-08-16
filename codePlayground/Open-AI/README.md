@@ -6,7 +6,8 @@ A minimal JavaScript project that integrates the OpenAI API and lets you create 
 
 - Create unlimited agents with:
   - Name
-  - Model (e.g., `gpt-4o-mini`, `gpt-4o`, `gpt-4.1-mini`)
+  - AI Provider (OpenAI, Anthropic Claude, Google Gemini, DeepSeek)
+  - Model selection based on provider
   - System instructions
 - Start a session with selected agents
 - Round‑robin turns among agents with one‑click stepping or auto 5 turns
@@ -14,6 +15,29 @@ A minimal JavaScript project that integrates the OpenAI API and lets you create 
 - Clean Bootstrap UI
 - **Persistent MongoDB storage** (agents, sessions, chat history)
 - **File upload support** for images and PDFs
+- **Multi-provider AI support** with automatic model selection
+
+## Supported AI Providers
+
+### OpenAI
+- Models: gpt-4o-mini, gpt-4o, gpt-4.1-mini, gpt-4.1
+- Features: Full multimodal support (text + images)
+
+### Anthropic Claude
+- Models: claude-3-haiku-20240307, claude-3-sonnet-20240229, claude-3-opus-20240229
+- Features: Text-only, excellent reasoning capabilities
+
+### Google Gemini
+- Models: gemini-1.5-flash, gemini-1.5-pro, gemini-pro
+- Features: Multimodal support (text + images)
+
+### DeepSeek
+- Models: deepseek-chat, deepseek-coder, deepseek-llm-7b-chat
+- Features: Text-only, good for coding tasks
+
+### Perplexity AI
+- Models: llama-3.1-8b-instant, llama-3.1-70b-vision, llama-3.1-405b, mixtral-8x7b-instruct, codellama-70b-instruct
+- Features: Text-only, excellent reasoning and coding capabilities
 
 ## Prerequisites
 
@@ -40,7 +64,11 @@ A minimal JavaScript project that integrates the OpenAI API and lets you create 
    ```bash
    # Create .env file with:
    OPENAI_API_KEY=your_openai_api_key_here
-   MONGODB_URI=mongodb://localhost:27017
+   ANTHROPIC_API_KEY=your_anthropic_api_key_here
+   GOOGLE_API_KEY=your_google_api_key_here
+   DEEPSEEK_API_KEY=your_deepseek_api_key_here
+   PERPLEXITY_API_KEY=your_perplexity_api_key_here
+   MONGODB_URI=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/multi_agent_openai?retryWrites=true&w=majority
    MONGODB_DB=multi_agent_openai
    PORT=3000
    ```

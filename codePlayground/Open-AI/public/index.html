@@ -32,6 +32,16 @@
               </select>
             </div>
             <div class="mb-3">
+              <label class="form-label">AI Provider</label>
+              <select id="agentProvider" class="form-select">
+                <option value="openai">OpenAI (GPT)</option>
+                <option value="anthropic">Anthropic (Claude)</option>
+                <option value="google">Google (Gemini)</option>
+                <option value="deepseek">DeepSeek</option>
+                <option value="perplexity">Perplexity AI</option>
+              </select>
+            </div>
+            <div class="mb-3">
               <label class="form-label">System Instructions</label>
               <textarea id="agentSystem" class="form-control" rows="6" placeholder="Describe how this agent should behave..."></textarea>
             </div>

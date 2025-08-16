@@ -12,6 +12,7 @@ const agentSelectionEl = document.getElementById('agentSelection');
 
 const agentNameEl = document.getElementById('agentName');
 const agentModelEl = document.getElementById('agentModel');
+const agentProviderEl = document.getElementById('agentProvider');
 const agentSystemEl = document.getElementById('agentSystem');
 const createAgentBtn = document.getElementById('createAgentBtn');
 const refreshAgentsBtn = document.getElementById('refreshAgentsBtn');
@@ -89,7 +90,7 @@ async function fetchAgents() {
           await fetch(`${apiBase}/api/agents`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: def.name, model: def.model, systemPrompt: def.systemPrompt })
+            body: JSON.stringify({ name: def.name, model: def.model, provider: def.provider, systemPrompt: def.systemPrompt })
           });
         } catch (_e) {}
       }
@@ -117,6 +118,7 @@ function renderAgents() {
           <div>
             <div class="fw-bold">${escapeHtml(agent.name)}</div>
             <div class="small text-muted">Model: ${escapeHtml(agent.model)}</div>
+            <div class="small text-muted">Provider: ${escapeHtml(agent.provider || 'openai')}</div>
           </div>
           <button class="btn btn-sm btn-outline-danger" data-id="${agent.id}"><i class="fa-solid fa-trash"></i></button>
         </div>
@@ -161,15 +163,17 @@ function renderChatAgentSelect() {
 createAgentBtn.addEventListener('click', async () => {
   const name = agentNameEl.value.trim();
   const model = agentModelEl.value;
+  const provider = agentProviderEl.value;
   const systemPrompt = agentSystemEl.value.trim();
   if (!name) return toast('Please enter an agent name', 'warning');
   const res = await fetch(`${apiBase}/api/agents`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, model, systemPrompt })
+    body: JSON.stringify({ name, model, provider, systemPrompt })
   });
   if (!res.ok) return toast('Failed to create agent', 'error');
-  upsertSavedAgent({ name, model, systemPrompt });
+  // Persist locally by name (server id is ephemeral)
+  upsertSavedAgent({ name, model, provider, systemPrompt });
   agentNameEl.value = '';
   agentSystemEl.value = '';
   await fetchAgents();
@@ -328,6 +332,34 @@ function formatMessage(s) {
     .replace(/```([\s\S]*?)```/g, (m, c) => `<pre class="code-block">${c}</pre>`) 
     .replace(/\n/g, '<br/>');
 }
+
+// Provider-specific model configurations
+const PROVIDER_MODELS = {
+  openai: ['gpt-4o-mini', 'gpt-4o', 'gpt-4.1-mini', 'gpt-4.1'],
+  anthropic: ['claude-3-haiku-20240307', 'claude-3-sonnet-20240229', 'claude-3-opus-20240229'],
+  google: ['gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro'],
+  deepseek: ['deepseek-chat', 'deepseek-coder', 'deepseek-llm-7b-chat'],
+  perplexity: ['llama-3.1-8b-instant', 'llama-3.1-70b-vision', 'llama-3.1-405b', 'mixtral-8x7b-instruct', 'codellama-70b-instruct']
+};
+
+function updateModelOptions() {
+  const provider = agentProviderEl.value;
+  const models = PROVIDER_MODELS[provider] || [];
+  
+  agentModelEl.innerHTML = '';
+  models.forEach(model => {
+    const option = document.createElement('option');
+    option.value = model;
+    option.textContent = model;
+    agentModelEl.appendChild(option);
+  });
+}
+
+// Update models when provider changes
+agentProviderEl.addEventListener('change', updateModelOptions);
+
+// Initialize model options
+updateModelOptions();
 
 // init
 fetchAgents().catch(() => toast('Could not load agents', 'error'));
