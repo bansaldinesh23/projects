@@ -1,0 +1,709 @@
+// Jan 04;
+
+"{"GICRE":{"counter":1,"listingPrice":"Rs. 193.55","date":"2023-01-04T08:01:47.000Z","growth":"32.06%"},"JSL":{"counter":1,"listingPrice":"Rs. 240.95","date":"2023-01-04T10:29:46.000Z","growth":"40.55%"},"FACT":{"counter":1,"listingPrice":"Rs. 353.85","date":"2023-01-04T10:29:40.000Z","growth":"130.43%"},"IOB":{"counter":1,"listingPrice":"Rs. 31.8","date":"2023-01-04T10:29:33.000Z","growth":"40.52%"},"UCOBANK":{"counter":1,"listingPrice":"Rs. 32.15","date":"2023-01-04T10:29:43.000Z","growth":"61.58%"},"NHPC":{"counter":1,"listingPrice":"Rs. 39.95","date":"2023-01-04T10:29:52.000Z","growth":"-5.13%"},"STEELXIND":{"counter":1,"listingPrice":"Rs. 14.85","date":"2023-01-04T07:53:02.000Z","growth":"8.24%"},"MOREPENLAB":{"counter":1,"listingPrice":"Rs. 35.8","date":"2023-01-04T07:53:44.000Z","growth":"14.08%"},"SPICEJET":{"counter":1,"listingPrice":"Rs. 38.5","date":"2023-01-04T07:53:36.000Z","growth":"-1.54%"},"FILATEX":{"counter":1,"listingPrice":"Rs. 45.95","date":"2023-01-04T07:53:36.000Z","growth":"-53.05%"},"GEOJITFSL":{"counter":1,"listingPrice":"Rs. 48","date":"2023-01-04T07:53:43.000Z","growth":"0.63%"},"NAVA":{"counter":1,"listingPrice":"Rs. 250.25","date":"2023-01-04T07:53:44.000Z","growth":"38.71%"},"USHAMART":{"counter":1,"listingPrice":"Rs. 179.7","date":"2023-01-04T07:53:43.000Z","growth":"42.12%"},"SUBEXLTD":{"counter":1,"listingPrice":"Rs. 33.9","date":"2023-01-04T10:26:27.000Z","growth":"-0.15%"},"PSB":{"counter":1,"listingPrice":"Rs. 32.85","date":"2023-01-04T05:16:14.000Z","growth":"39.35%"},"VIKASWSP":{"counter":1,"listingPrice":"Rs. 1.85","date":"2023-01-04T05:16:14.000Z","growth":"-2.7%"},"UDAICEMENT":{"counter":1,"listingPrice":"Rs. 32.35","date":"2023-01-04T05:16:14.000Z","growth":"-6.3%"}}"
+
+
+/// jan 05
+
+
+"{"GICRE":{"counter":2,"listingPrice":"Rs. 195.45","date":"2023-01-05T05:02:13.000Z","growth":"34.44%","perdaychage":-2.79},"JSL":{"counter":2,"listingPrice":"Rs. 236.65","date":"2023-01-05T05:00:43.000Z","growth":"34.27%","perdaychage":-1.54},"FACT":{"counter":2,"listingPrice":"Rs. 367.2","date":"2023-01-05T05:00:42.000Z","growth":"141.45%","perdaychage":3.77},"IOB":{"counter":2,"listingPrice":"Rs. 31.5","date":"2023-01-05T05:00:44.000Z","growth":"42.06%","perdaychage":-0.79},"UCOBANK":{"counter":2,"listingPrice":"Rs. 32.2","date":"2023-01-05T05:00:41.000Z","growth":"58.33%","perdaychage":-0.31},"NHPC":{"counter":1,"listingPrice":"Rs. 39.95","date":"2023-01-04T10:29:52.000Z","growth":"-5.13%"},"STEELXIND":{"counter":1,"listingPrice":"Rs. 14.85","date":"2023-01-04T07:53:02.000Z","growth":"8.24%"},"MOREPENLAB":{"counter":1,"listingPrice":"Rs. 35.8","date":"2023-01-04T07:53:44.000Z","growth":"14.08%"},"SPICEJET":{"counter":2,"listingPrice":"Rs. 38.6","date":"2023-01-05T05:00:41.000Z","growth":"-3.9%","perdaychage":1.05},"FILATEX":{"counter":1,"listingPrice":"Rs. 45.95","date":"2023-01-04T07:53:36.000Z","growth":"-53.05%"},"GEOJITFSL":{"counter":1,"listingPrice":"Rs. 48","date":"2023-01-04T07:53:43.000Z","growth":"0.63%"},"NAVA":{"counter":2,"listingPrice":"Rs. 245.1","date":"2023-01-05T05:00:41.000Z","growth":"33.14%","perdaychage":-0.65},"USHAMART":{"counter":2,"listingPrice":"Rs. 179","date":"2023-01-05T05:00:46.000Z","growth":"35.08%","perdaychage":-0.67},"SUBEXLTD":{"counter":2,"listingPrice":"Rs. 34.55","date":"2023-01-05T05:00:44.000Z","growth":"-1.74%","perdaychage":2.07},"PSB":{"counter":2,"listingPrice":"Rs. 32.65","date":"2023-01-05T05:59:16.000Z","growth":"32.4%","perdaychage":-1.36},"VIKASWSP":{"counter":1,"listingPrice":"Rs. 1.85","date":"2023-01-04T05:16:14.000Z","growth":"-2.7%"},"UDAICEMENT":{"counter":1,"listingPrice":"Rs. 32.35","date":"2023-01-04T05:16:14.000Z","growth":"-6.3%"},"TRIDENT":{"counter":1,"listingPrice":"Rs. 34.1","date":"2023-01-05T05:02:11.000Z","growth":"-9.81%","perdaychage":0.29},"SJVN":{"counter":1,"listingPrice":"Rs. 34.55","date":"2023-01-05T05:00:43.000Z","growth":"-16.55%","perdaychage":0.73},"RTNINDIA":{"counter":1,"listingPrice":"Rs. 42.7","date":"2023-01-05T05:00:43.000Z","growth":"-15.02%","perdaychage":0.59},"GTLINFRA":{"counter":1,"listingPrice":"Rs. 1.25","date":"2023-01-05T05:00:45.000Z","growth":"-14.29%","perdaychage":4.17},"JSWISPL":{"counter":1,"listingPrice":"Rs. 31.75","date":"2023-01-05T05:00:41.000Z","growth":"-2.48%","perdaychage":0.95},"HCC":{"counter":1,"listingPrice":"Rs. 20.7","date":"2023-01-05T05:00:42.000Z","growth":"7.03%","perdaychage":0.73},"ELECTCAST":{"counter":1,"listingPrice":"Rs. 38.35","date":"2023-01-05T05:00:41.000Z","growth":"-5.11%","perdaychage":0.66},"JISLJALEQS":{"counter":1,"listingPrice":"Rs. 32.6","date":"2023-01-05T05:00:37.000Z","growth":"-3.27%","perdaychage":0.15},"JINDWORLD":{"counter":1,"listingPrice":"Rs. 450.4","date":"2023-01-05T05:00:45.000Z","growth":"30.38%","perdaychage":-2.19},"BCG":{"counter":1,"listingPrice":"Rs. 28.75","date":"2023-01-05T05:57:16.000Z","growth":"-14.84%","perdaychage":0.17},"DISHTV":{"counter":1,"listingPrice":"Rs. 18.3","date":"2023-01-05T05:58:47.000Z","growth":"-18.79%","perdaychage":0.83}}"
+
+
+//another
+
+"{"GICRE":{"counter":2,"listingPrice":"Rs. 195.45","date":"2023-01-05T05:02:13.000Z","growth":"34.44%","perdaychage":-2.79},"JSL":{"counter":2,"listingPrice":"Rs. 236.65","date":"2023-01-05T05:00:43.000Z","growth":"34.27%","perdaychage":-1.54},"FACT":{"counter":2,"listingPrice":"Rs. 367.2","date":"2023-01-05T05:00:42.000Z","growth":"141.45%","perdaychage":3.77},"IOB":{"counter":2,"listingPrice":"Rs. 31.5","date":"2023-01-05T05:00:44.000Z","growth":"42.06%","perdaychage":-0.79},"UCOBANK":{"counter":2,"listingPrice":"Rs. 32.2","date":"2023-01-05T05:00:41.000Z","growth":"58.33%","perdaychage":-0.31},"NHPC":{"counter":1,"listingPrice":"Rs. 39.95","date":"2023-01-04T10:29:52.000Z","growth":"-5.13%"},"STEELXIND":{"counter":1,"listingPrice":"Rs. 14.85","date":"2023-01-04T07:53:02.000Z","growth":"8.24%"},"MOREPENLAB":{"counter":1,"listingPrice":"Rs. 35.8","date":"2023-01-04T07:53:44.000Z","growth":"14.08%"},"SPICEJET":{"counter":2,"listingPrice":"Rs. 38.6","date":"2023-01-05T05:00:41.000Z","growth":"-3.9%","perdaychage":1.05},"FILATEX":{"counter":1,"listingPrice":"Rs. 45.95","date":"2023-01-04T07:53:36.000Z","growth":"-53.05%"},"GEOJITFSL":{"counter":1,"listingPrice":"Rs. 48","date":"2023-01-04T07:53:43.000Z","growth":"0.63%"},"NAVA":{"counter":2,"listingPrice":"Rs. 245.1","date":"2023-01-05T05:00:41.000Z","growth":"33.14%","perdaychage":-0.65},"USHAMART":{"counter":2,"listingPrice":"Rs. 179","date":"2023-01-05T05:00:46.000Z","growth":"35.08%","perdaychage":-0.67},"SUBEXLTD":{"counter":2,"listingPrice":"Rs. 34.55","date":"2023-01-05T05:00:44.000Z","growth":"-1.74%","perdaychage":2.07},"PSB":{"counter":2,"listingPrice":"Rs. 32.65","date":"2023-01-05T05:59:16.000Z","growth":"32.4%","perdaychage":-1.36},"VIKASWSP":{"counter":3,"listingPrice":"Rs. 1.85","date":null,"growth":"-2.7%","perdaychage":2.78},"UDAICEMENT":{"counter":1,"listingPrice":"Rs. 32.35","date":"2023-01-04T05:16:14.000Z","growth":"-6.3%"},"TRIDENT":{"counter":1,"listingPrice":"Rs. 34.1","date":"2023-01-05T05:02:11.000Z","growth":"-9.81%","perdaychage":0.29},"SJVN":{"counter":1,"listingPrice":"Rs. 34.55","date":"2023-01-05T05:00:43.000Z","growth":"-16.55%","perdaychage":0.73},"RTNINDIA":{"counter":1,"listingPrice":"Rs. 42.7","date":"2023-01-05T05:00:43.000Z","growth":"-15.02%","perdaychage":0.59},"GTLINFRA":{"counter":1,"listingPrice":"Rs. 1.25","date":"2023-01-05T05:00:45.000Z","growth":"-14.29%","perdaychage":4.17},"JSWISPL":{"counter":1,"listingPrice":"Rs. 31.75","date":"2023-01-05T05:00:41.000Z","growth":"-2.48%","perdaychage":0.95},"HCC":{"counter":1,"listingPrice":"Rs. 20.7","date":"2023-01-05T05:00:42.000Z","growth":"7.03%","perdaychage":0.73},"ELECTCAST":{"counter":1,"listingPrice":"Rs. 38.35","date":"2023-01-05T05:00:41.000Z","growth":"-5.11%","perdaychage":0.66},"JISLJALEQS":{"counter":1,"listingPrice":"Rs. 32.6","date":"2023-01-05T05:00:37.000Z","growth":"-3.27%","perdaychage":0.15},"JINDWORLD":{"counter":1,"listingPrice":"Rs. 450.4","date":"2023-01-05T05:00:45.000Z","growth":"30.38%","perdaychage":-2.19},"BCG":{"counter":1,"listingPrice":"Rs. 28.75","date":"2023-01-05T05:57:16.000Z","growth":"-14.84%","perdaychage":0.17},"DISHTV":{"counter":1,"listingPrice":"Rs. 18.3","date":"2023-01-05T05:58:47.000Z","growth":"-18.79%","perdaychage":0.83},"IDEA":{"counter":1,"listingPrice":"Rs. 7.9","date":"2023-01-05T06:58:18.000Z","growth":"-4.29%","perdaychage":1.28}}";
+
+
+
+
+
+
+stocks-lsit;
+
+{"NIFTY 50":true,"BRITANNIA":true,"RELIANCE":true,"HDFCLIFE":true,"M&M":true,"HINDALCO":true,"NTPC":true,"APOLLOHOSP":true,"ITC":true,"HINDUNILVR":true,"ADANIENT":true,"BPCL":true,"ONGC":true,"NESTLEIND":true,"SBILIFE":true,"UPL":true,"TATASTEEL":true,"TATACONSUM":true,"LT":true,"DIVISLAB":true,"POWERGRID":true,"EICHERMOT":true,"SBIN":true,"ULTRACEMCO":true,"BAJAJ-AUTO":true,"DRREDDY":true,"HDFC":true,"HCLTECH":true,"TATAMOTORS":true,"KOTAKBANK":true,"CIPLA":true,"HDFCBANK":true,"BHARTIARTL":true,"WIPRO":true,"SUNPHARMA":true,"TITAN":true,"ADANIPORTS":true,"HEROMOTOCO":true,"GRASIM":true,"MARUTI":true,"AXISBANK":true,"INDUSINDBK":true,"ASIANPAINT":true,"INFY":true,"ICICIBANK":true,"TECHM":true,"BAJFINANCE":true,"TCS":true,"COALINDIA":true,"JSWSTEEL":true,"BAJAJFINSV":true,"NIFTY NEXT 50":true,"PAYTM":true,"BANDHANBNK":true,"HAVELLS":true,"GAIL":true,"HAL":true,"IOC":true,"GODREJCP":true,"MPHASIS":true,"ICICIGI":true,"BOSCHLTD":true,"BANKBARODA":true,"COLPAL":true,"AMBUJACEM":true,"INDUSTOWER":true,"MCDOWELL-N":true,"ICICIPRULI":true,"VEDL":true,"TORNTPHARM":true,"BIOCON":true,"ACC":true,"DLF":true,"MARICO":true,"MOTHERSON":true,"IRCTC":true,"BEL":true,"PIDILITIND":true,"SBICARD":true,"LTIM":true,"SIEMENS":true,"MUTHOOTFIN":true,"BERGEPAINT":true,"DMART":true,"BAJAJHLDNG":true,"PGHH":true,"PIIND":true,"ADANIGREEN":true,"NAUKRI":true,"INDIGO":true,"NYKAA":true,"SRF":true,"TATAPOWER":true,"GLAND":true,"LICI":true,"HDFCAMC":true,"DABUR":true,"ZOMATO":true,"SHREECEM":true,"ATGL":true,"CHOLAFIN":true,"ADANITRANS":true,"NIFTY MIDCAP 50":true,"ASTRAL":true,"MFSL":true,"PFC":true,"VOLTAS":true,"BALKRISIND":true,"MRF":true,"ABBOTINDIA":true,"RECLTD":true,"ABB":true,"HINDPETRO":true,"TATACOMM":true,"CUMMINSIND":true,"POLYCAB":true,"ALKEM":true,"PNB":true,"AUROPHARMA":true,"M&MFIN":true,"JINDALSTEL":true,"GODREJPROP":true,"JUBLFOOD":true,"LTTS":true,"SAIL":true,"ZYDUSLIFE":true,"OFSS":true,"CONCOR":true,"ZEEL":true,"ASHOKLEY":true,"BATAINDIA":true,"LUPIN":true,"TORNTPOWER":true,"UBL":true,"CANBK":true,"ESCORTS":true,"COFORGE":true,"BHARATFORG":true,"IDFCFIRSTB":true,"TVSMOTOR":true,"PETRONET":true,"OBEROIRLTY":true,"GUJGASLTD":true,"SHRIRAMFIN":true,"AUBANK":true,"HONAUT":true,"FEDERALBNK":true,"PAGEIND":true,"INDHOTEL":true,"PERSISTENT":true,"IDEA":true,"TRENT":true,"LICHSGFIN":true,"NIFTY MIDCAP 100":true,"SONACOMS":true,"BHEL":true,"IGL":true,"CROMPTON":true,"TATACHEM":true,"SYNGENE":true,"COROMANDEL":true,"POONAWALLA":true,"RAMCOCEM":true,"NATIONALUM":true,"DALBHARAT":true,"WHIRLPOOL":true,"ISEC":true,"DEEPAKNTR":true,"ABFRL":true,"UNIONBANK":true,"GSPL":true,"EMAMILTD":true,"NAM-INDIA":true,"OIL":true,"LAURUSLABS":true,"INDIAMART":true,"SUNTV":true,"INDIANB":true,"L&TFH":true,"JSWENERGY":true,"PATANJALI":true,"IEX":true,"LALPATHLAB":true,"BANKINDIA":true,"DIXON":true,"FORTIS":true,"PRESTIGE":true,"POLICYBZR":true,"IPCALAB":true,"AWL":true,"NAVINFLUOR":true,"TRIDENT":true,"MSUMI":true,"CLEAN":true,"HINDZINC":true,"VBL":true,"TIINDIA":true,"TATAELXSI":true,"ABCAPITAL":true,"DELHIVERY":true,"YESBANK":true,"LINDEINDIA":true,"MAXHEALTH":true,"TTML":true,"NIFTY MIDCAP 150":true,"GODREJIND":true,"MANYAVAR":true,"NHPC":true,"3MINDIA":true,"ALKYLAMINE":true,"SKFINDIA":true,"GRINDWELL":true,"SUPREMEIND":true,"THERMAX":true,"APLAPOLLO":true,"STARHEALTH":true,"SANOFI":true,"UNOMINDA":true,"LODHA":true,"PHOENIXLTD":true,"VINATIORGA":true,"SOLARINDS":true,"RELAXO":true,"SUNDRMFAST":true,"HATSUN":true,"NATCOPHARM":true,"ZFCVINDIA":true,"FLUOROCHEM":true,"SUMICHEM":true,"GLAXO":true,"AJANTPHARM":true,"APLLTD":true,"GMRINFRA":true,"AIAENG":true,"ATUL":true,"BAYERCROP":true,"AFFLE":true,"JKCEMENT":true,"PFIZER":true,"IRFC":true,"KANSAINER":true,"ENDURANCE":true,"HAPPSTMNDS":true,"BLUEDART":true,"AAVAS":true,"CGPOWER":true,"CRISIL":true,"SCHAEFFLER":true,"DEVYANI":true,"SUNDARMFIN":true,"KPRMILL":true,"RAJESHEXPO":true,"KAJARIACER":true,"NIACL":true,"GICRE":true,"NIFTY SMALLCAP 50":true,"RADICO":true,"AMARAJABAT":true,"HINDCOPPER":true,"JUBLINGREA":true,"GNFC":true,"LATENTVIEW":true,"GRAPHITE":true,"BDL":true,"KPITTECH":true,"BAJAJELEC":true,"MRPL":true,"AMBER":true,"CAMS":true,"INTELLECT":true,"INDIGOPNTS":true,"JBCHEPHARM":true,"CHAMBLFERT":true,"ALOKINDS":true,"BALAMINES":true,"LXCHEM":true,"FSL":true,"CANFINHOME":true,"HFCL":true,"ROUTE":true,"IDFC":true,"TV18BRDCST":true,"UTIAMC":true,"CDSL":true,"CESC":true,"MANAPPURAM":true,"STLTECH":true,"BSE":true,"RENUKA":true,"BALRAMCHIN":true,"METROPOLIS":true,"REDINGTON":true,"METROBRAND":true,"CYIENT":true,"MEDPLUS":true,"CAMPUS":true,"ZENSARTECH":true,"MAHABANK":true,"ANURAS":true,"CHEMPLASTS":true,"BIRLACORPN":true,"WELSPUNIND":true,"PVR":true,"APOLLOTYRE":true,"ANGELONE":true,"BSOFT":true,"NIFTY SMALLCAP 100":true,"IDBI":true,"SOBHA":true,"JSL":true,"MAPMYINDIA":true,"TRIVENI":true,"RBLBANK":true,"DCMSHRIRAM":true,"QUESS":true,"KEC":true,"EASEMYTRIP":true,"BCG":true,"MCX":true,"MASTEK":true,"BRIGADE":true,"EIDPARRY":true,"SUNTECK":true,"VIPIND":true,"AETHER":true,"MGL":true,"JUSTDIAL":true,"VTL":true,"EXIDEIND":true,"ELGIEQUIP":true,"DELTACORP":true,"SUZLON":true,"FINEORG":true,"LUXIND":true,"SAPPHIRE":true,"IBULHSGFIN":true,"BORORENEW":true,"GRANULES":true,"NETWORK18":true,"PRAJIND":true,"TANLA":true,"NLCINDIA":true,"MAZDOCK":true,"CENTURYTEX":true,"AEGISCHEM":true,"RAIN":true,"DEEPAKFERT":true,"CUB":true,"IRB":true,"CREDITACC":true,"KEI":true,"IIFL":true,"NBCC":true,"CARBORUNIV":true,"GLENMARK":true,"POLYPLEX":true,"MMTC":true,"NIFTY SMALLCAP 250":true,"SHARDACROP":true,"GSFC":true,"CEATLTD":true,"MAHINDCIE":true,"TTKPRESTIG":true,"GODFRYPHLP":true,"POWERINDIA":true,"GALAXYSURF":true,"GMMPFAUDLR":true,"BEML":true,"POLYMED":true,"RVNL":true,"SHOPERSTOP":true,"HEG":true,"PRINCEPIPE":true,"GUJALKALI":true,"TRITURBINE":true,"SUPRAJIT":true,"RTNINDIA":true,"AVANTIFEED":true,"HLEGLAS":true,"SYMPHONY":true,"NCC":true,"ZYDUSWELL":true,"SUVENPHAR":true,"SONATSOFTW":true,"SIS":true,"WELCORP":true,"IBREALEST":true,"IFBIND":true,"RBA":true,"PRIVISCL":true,"UFLEX":true,"HUDCO":true,"MTARTECH":true,"JUBLPHARMA":true,"CHALET":true,"LAXMIMACH":true,"NH":true,"SHYAMMETL":true,"MOIL":true,"GOCOLORS":true,"ASTRAZEN":true,"EQUITASBNK":true,"CENTURYPLY":true,"AARTIDRUGS":true,"NUVOCO":true,"TATAINVEST":true,"MHRIL":true,"VAIBHAVGBL":true,"CGCL":true,"KIMS":true,"GESHIP":true,"CHOLAHLDNG":true,"EPL":true,"BLUESTARCO":true,"CASTROLIND":true,"FDC":true,"RAINBOW":true,"PNBHOUSING":true,"DBL":true,"TEJASNET":true,"SPARC":true,"EDELWEISS":true,"MAHLOG":true,"ECLERX":true,"ITI":true,"TEAMLEASE":true,"NAZARA":true,"INDIACEM":true,"KNRCON":true,"HGS":true,"EIHOTEL":true,"PNCINFRA":true,"TCI":true,"MOTILALOFS":true,"GRINFRA":true,"ASAHIINDIA":true,"JMFINANCIL":true,"CERA":true,"INDOCO":true,"JAMNAAUTO":true,"KRBL":true,"CAPLIPOINT":true,"BBTC":true,"TCIEXP":true,"FINPIPE":true,"SFL":true,"SJVN":true,"ABSLAMC":true,"VARROC":true,"INFIBEAM":true,"APTUS":true,"IIFLWAM":true,"ENGINERSIN":true,"RALLIS":true,"GARFIBRES":true,"MAHLIFE":true,"ORIENTELEC":true,"PCBL":true,"JKLAKSHMI":true,"TCNSBRANDS":true,"SUDARSCHEM":true,"TATACOFFEE":true,"PGHL":true,"RITES":true,"GAEL":true,"RCF":true,"VGUARD":true,"BHARATRAS":true,"WESTLIFE":true,"RATNAMANI":true,"KALPATPOWR":true,"ASTERDM":true,"HIKAL":true,"CCL":true,"TIMKEN":true,"GODREJAGRO":true,"SWSOLAR":true,"NOCIL":true,"VIJAYA":true,"RAYMOND":true,"CSBBANK":true,"JYOTHYLAB":true,"IOB":true,"SHILPAMED":true,"DHANI":true,"KARURVYSYA":true,"INOXLEISUR":true,"JKPAPER":true,"SWANENERGY":true,"ROSSARI":true,"JBMA":true,"RHIM":true,"BASF":true,"CENTRALBK":true,"VMART":true,"LEMONTREE":true,"THYROCARE":true,"OLECTRA":true,"GREENPANEL":true,"WOCKPHARMA":true,"GPPL":true,"KALYANKJIL":true,"FINCABLES":true,"COCHINSHIP":true,"PRSMJOHNSN":true,"UCOBANK":true,"HOMEFIRST":true,"FACT":true,"NIFTY MIDSMALLCAP 400":true,"NIFTY 100":true,"NIFTY 200":true,"NIFTY 500":true,"TATAMTRDVR":true,"NIFTY500 MULTICAP 50:25:25":true,"NIFTY TOTAL MARKET":true,"DHANUKA":true,"GATI":true,"ASTRAMICRO":true,"POKARNA":true,"BALMLAWRIE":true,"NAVA":true,"STARCEMENT":true,"FORCEMOT":true,"ANANTRAJ":true,"CHOICEIN":true,"PSPPROJECT":true,"KSCL":true,"BAJAJCON":true,"WABAG":true,"RAJRATAN":true,"RATEGAIN":true,"ETHOSLTD":true,"BEPL":true,"DFMFOODS":true,"STOVEKRAFT":true,"JKIL":true,"GMDCLTD":true,"GUFICBIO":true,"PANAMAPET":true,"BOROLTD":true,"ARVIND":true,"ANANDRATHI":true,"KCP":true,"GANESHHOUC":true,"MAITHANALL":true,"SHAREINDIA":true,"VSTIND":true,"DBREALTY":true,"HEIDELBERG":true,"TECHNOE":true,"DATAPATTNS":true,"CRAFTSMAN":true,"MASFIN":true,"IONEXCHANG":true,"EVEREADY":true,"KIRLOSENG":true,"KIRLFER":true,"SEQUENT":true,"MMFL":true,"OMAXE":true,"TATAMETALI":true,"TARSONS":true,"SOLARA":true,"MATRIMONY":true,"OPTIEMUS":true,"HGINFRA":true,"GRWRHITECH":true,"MARKSANS":true,"SUPRIYA":true,"HCG":true,"GATEWAY":true,"VAKRANGEE":true,"SYRMA":true,"ANDHRSUGAR":true,"MIDHANI":true,"SBCL":true,"DATAMATICS":true,"GLOBUSSPR":true,"AGI":true,"JINDWORLD":true,"BARBEQUE":true,"SAGCEM":true,"TEGA":true,"INGERRAND":true,"DOLATALGO":true,"HCC":true,"AMRUTANJAN":true,"RESPONIND":true,"TATVA":true,"HNDFDS":true,"HSCL":true,"HERANBA":true,"TATASTLLP":true,"IOLCP":true,"HEMIPROP":true,"VIDHIING":true,"LAOPALA":true,"MAHSCOOTER":true,"MINDACORP":true,"SOMANYCERA":true,"SURYODAY":true,"GABRIEL":true,"PARAS":true,"GOODYEAR":true,"GPIL":true,"MAYURUNIQ":true,"GREENPLY":true,"KENNAMET":true,"CARERATING":true,"SHK":true,"ROLEXRINGS":true,"SAFARI":true,"TIDEWATER":true,"GLS":true,"TIIL":true,"GTLINFRA":true,"RTNPOWER":true,"CAMLINFINE":true,"DCAL":true,"NESCO":true,"VENKEYS":true,"TIMETECHNO":true,"KIRIINDUS":true,"ORIENTCEM":true,"HIL":true,"TIRUMALCHM":true,"HINDOILEXP":true,"J&KBANK":true,"BECTORFOOD":true,"TINPLATE":true,"INEOSSTYRO":true,"ELECTCAST":true,"DEN":true,"HINDWAREAP":true,"ACCELYA":true,"EMUDHRA":true,"PARADEEP":true,"AMIORG":true,"RKFORGE":true,"TASTYBITE":true,"RPSGVENT":true,"ALEMBICLTD":true,"KRSNAA":true,"STAR":true,"JKTYRE":true,"TVTODAY":true,"RUPA":true,"JCHAC":true,"TMB":true,"DOLLAR":true,"ORISSAMINE":true,"HATHWAY":true,"COSMOFIRST":true,"JISLJALEQS":true,"INDORAMA":true,"BLS":true,"ADVENZYMES":true,"IFCI":true,"MOLDTKPAC":true,"VRLLOG":true,"RELIGARE":true,"IGPL":true,"AKZOINDIA":true,"IMFA":true,"WSTCSTPAPR":true,"SURYAROSNI":true,"WELENT":true,"APOLLOPIPE":true,"HERITGFOOD":true,"KSB":true,"NEWGEN":true,"DAAWAT":true,"SSWL":true,"CARTRADE":true,"SPICEJET":true,"INDIAGLYCO":true,"THOMASCOOK":true,"FAIRCHEMOR":true,"CHENNPETRO":true,"BFUTILITIE":true,"MANINFRA":true,"ARVINDFASN":true,"APCOTEXIND":true,"MOL":true,"NRBBEARING":true,"INDOSTAR":true,"DALMIASUG":true,"UJJIVANSFB":true,"VESUVIUS":true,"JPPOWER":true,"FILATEX":true,"SIYSIL":true,"VALIANTORG":true,"RPOWER":true,"IIFLSEC":true,"VSTTILLERS":true,"AUTOAXLES":true,"MANALIPETC":true,"GEOJITFSL":true,"ACE":true,"ELECON":true,"PAISALO":true,"NEULANDLAB":true,"VOLTAMP":true,"NEOGEN":true,"HBLPOWER":true,"APARINDS":true,"BOMDYEING":true,"BUTTERFLY":true,"BESTAGRO":true,"ASHOKA":true,"MFL":true,"CONFIPET":true,"GOKEX":true,"BAJAJHIND":true,"GREAVESCOT":true,"EKC":true,"JAICORPLTD":true,"CIGNITITEC":true,"PRUDENT":true,"JSWISPL":true,"CMSINFO":true,"JPASSOCIAT":true,"RELINFRA":true,"MOREPENLAB":true,"LGBBROSLTD":true,"GULFOILLUB":true,"MSTCLTD":true,"SEAMECLTD":true,"JINDALPOLY":true,"PDSL":true,"SUBEXLTD":true,"GRSE":true,"IRCON":true,"HIMATSEIDE":true,"DWARKESH":true,"ISGEC":true,"ICRA":true,"SARDAEN":true,"ESABINDIA":true,"GRAVITA":true,"DCBBANK":true,"SOUTHBANK":true,"NAVNETEDUL":true,"JINDALSAW":true,"IPL":true,"FINOPB":true,"SPLPETRO":true,"AHLUCONT":true,"RAILTEL":true,"KOLTEPATIL":true,"ICIL":true,"STEELXIND":true,"INOXWIND":true,"SPANDANA":true,"SANSERA":true,"DISHTV":true,"FCL":true,"KTKBANK":true,"USHAMART":true,"MAHSEAMLES":true,"ASTEC":true,"CARYSIL":true,"NFL":true,"SCHNEIDER":true,"NIFTY MICROCAP 250":true,"NIFTY AUTO":true,"NIFTY BANK":true,"NIFTY ENERGY":true,"NIFTY FINANCIAL SERVICES":true,"NIFTY FMCG":true,"NIFTY IT":true,"NIFTY MEDIA":true,"NIFTY METAL":true,"NIFTY PHARMA":true,"NIFTY PSU BANK":true,"PSB":true,"NIFTY REALTY":true,"NIFTY PRIVATE BANK":true,"NIFTY HEALTHCARE INDEX":true,"NIFTY CONSUMER DURABLES":true,"NIFTY COMMODITIES":true,"NIFTY INDIA CONSUMPTION":true,"NIFTY CPSE":true,"NIFTY INFRASTRUCTURE":true,"NIFTY MNC":true,"NIFTY GROWTH SECTORS 15":true,"NIFTY PSE":true,"NIFTY SERVICES SECTOR":true,"NIFTY100 LIQUID 15":true,"NIFTY MIDCAP LIQUID 15":true,"NIFTY INDIA DIGITAL":true,"NIFTY100 ESG":true,"NIFTY INDIA MANUFACTURING":true,"NIFTY DIVIDEND OPPORTUNITIES 50":true,"NIFTY50 VALUE 20":true,"NIFTY100 QUALITY 30":true,"NIFTY50 EQUAL WEIGHT":true,"NIFTY100 EQUAL WEIGHT":true,"NIFTY100 LOW VOLATILITY 30":true,"NIFTY ALPHA 50":true,"ADANIPOWER":true,"NIFTY200 QUALITY 30":true,"NIFTY ALPHA LOW-VOLATILITY 30":true,"NIFTY200 MOMENTUM 30":true}
+
+
+
+
+
+
+new watch listingPrice
+
+let watchList = {
+          "GICRE": {
+              "counter": 3,
+              "listingPrice": "Rs.188.9",
+              "date": "2023-01-06T05: 29: 46.000Z",
+              "growth": "32.14%",
+              "perdaychage": -3.28
+            },
+            "JSL": {
+              "counter": 2,
+              "listingPrice": "Rs.236.65",
+              "date": "2023-01-05T05: 00: 43.000Z",
+              "growth": "34.27%",
+              "perdaychage": -1.54
+            },
+            "FACT": {
+              "counter": 3,
+              "listingPrice": "Rs.356.4",
+              "date": "2023-01-06T05: 50: 46.000Z",
+              "growth": "151.95%",
+              "perdaychage": -4.06
+            },
+          "IOB": {
+              "counter": 3,
+              "listingPrice": "Rs.31.2",
+              "date": "2023-01-06T05: 50: 43.000Z",
+              "growth": "37.17%",
+              "perdaychage": -1.11
+            },
+            "UCOBANK": {
+              "counter": 3,
+              "listingPrice": "Rs.31.25",
+              "date": "2023-01-06T05: 50: 45.000Z",
+              "growth": "52.25%",
+              "perdaychage": -2.95
+            },
+          "NAVA": {
+              "counter": 3,
+              "listingPrice": "Rs.255.2",
+              "date": "2023-01-06T05: 29: 46.000Z",
+              "growth": "32.87%",
+              "perdaychage": 3.4
+            },
+            "USHAMART": {
+              "counter": 3,
+              "listingPrice": "Rs.178.8",
+              "date": "2023-01-06T05: 29: 45.000Z",
+              "growth": "32.57%",
+              "perdaychage": -2.05
+            },
+          "PSB": {
+              "counter": 2,
+              "listingPrice": "Rs.32.65",
+              "date": "2023-01-05T05: 59: 16.000Z",
+              "growth": "32.4%",
+              "perdaychage": -1.36
+            },
+           "JINDWORLD": {
+              "counter": 1,
+              "listingPrice": "Rs.450.4",
+              "date": "2023-01-05T05: 00: 45.000Z",
+              "growth": "30.38%",
+              "perdaychage": -2.19
+            }
+          };
+  let pennyWatchList = {
+          
+          
+          "NHPC": {
+            "counter": 2,
+            "listingPrice": "Rs.39.6",
+            "date": "2023-01-06T05: 29: 44.000Z",
+            "growth": "-9.15%",
+            "perdaychage": 1.02
+          },
+          "STEELXIND": {
+            "counter": 1,
+            "listingPrice": "Rs.14.85",
+            "date": "2023-01-04T07: 53: 02.000Z",
+            "growth": "8.24%"
+          },
+          "MOREPENLAB": {
+            "counter": 1,
+            "listingPrice": "Rs.35.8",
+            "date": "2023-01-04T07: 53: 44.000Z",
+            "growth": "14.08%"
+          },
+          "SPICEJET": {
+            "counter": 2,
+            "listingPrice": "Rs.38.6",
+            "date": "2023-01-05T05: 00: 41.000Z",
+            "growth": "-3.9%",
+            "perdaychage": 1.05
+          },
+          "FILATEX": {
+            "counter": 1,
+            "listingPrice": "Rs.45.95",
+            "date": "2023-01-04T07: 53: 36.000Z",
+            "growth": "-53.05%"
+          },
+          "GEOJITFSL": {
+            "counter": 1,
+            "listingPrice": "Rs.48",
+            "date": "2023-01-04T07: 53: 43.000Z",
+            "growth": "0.63%"
+          },
+          
+          "SUBEXLTD": {
+            "counter": 2,
+            "listingPrice": "Rs.34.55",
+            "date": "2023-01-05T05: 00: 44.000Z",
+            "growth": "-1.74%",
+            "perdaychage": 2.07
+          },
+          
+          "VIKASWSP": {
+            "counter": 2,
+            "listingPrice": "Rs.1.85",
+            "date": "2023-01-06T05: 00: 44.000Z",
+            "growth": "-2.7%",
+            "perdaychage": 2.78
+          },
+          "UDAICEMENT": {
+            "counter": 1,
+            "listingPrice": "Rs.32.35",
+            "date": "2023-01-04T05: 16: 14.000Z",
+            "growth": "-6.3%"
+          },
+          "TRIDENT": {
+            "counter": 1,
+            "listingPrice": "Rs.34.1",
+            "date": "2023-01-05T05: 02: 11.000Z",
+            "growth": "-9.81%",
+            "perdaychage": 0.29
+          },
+          "SJVN": {
+            "counter": 1,
+            "listingPrice": "Rs.34.55",
+            "date": "2023-01-05T05: 00: 43.000Z",
+            "growth": "-16.55%",
+            "perdaychage": 0.73
+          },
+          "RTNINDIA": {
+            "counter": 2,
+            "listingPrice": "Rs.42.9",
+            "date": "2023-01-06T05: 50: 42.000Z",
+            "growth": "-14.3%",
+            "perdaychage": 0.82
+          },
+          "GTLINFRA": {
+            "counter": 1,
+            "listingPrice": "Rs.1.25",
+            "date": "2023-01-05T05: 00: 45.000Z",
+            "growth": "-14.29%",
+            "perdaychage": 4.17
+          },
+          "JSWISPL": {
+            "counter": 1,
+            "listingPrice": "Rs.31.75",
+            "date": "2023-01-05T05: 00: 41.000Z",
+            "growth": "-2.48%",
+            "perdaychage": 0.95
+          },
+          "HCC": {
+            "counter": 2,
+            "listingPrice": "Rs.21.15",
+            "date": "2023-01-06T05: 29: 43.000Z",
+            "growth": "12.23%",
+            "perdaychage": 0.24
+          },
+          "ELECTCAST": {
+            "counter": 1,
+            "listingPrice": "Rs.38.35",
+            "date": "2023-01-05T05: 00: 41.000Z",
+            "growth": "-5.11%",
+            "perdaychage": 0.66
+          },
+          "JISLJALEQS": {
+            "counter": 1,
+            "listingPrice": "Rs.32.6",
+            "date": "2023-01-05T05: 00: 37.000Z",
+            "growth": "-3.27%",
+            "perdaychage": 0.15
+          },
+         
+          "BCG": {
+            "counter": 2,
+            "listingPrice": "Rs.28.7",
+            "date": "2023-01-06T05: 50: 16.000Z",
+            "growth": "-12.4%",
+            "perdaychage": 0.35
+          },
+          "DISHTV": {
+            "counter": 1,
+            "listingPrice": "Rs.18.3",
+            "date": "2023-01-05T05: 58: 47.000Z",
+            "growth": "-18.79%",
+            "perdaychage": 0.83
+          },
+          "IDEA": {
+            "counter": 1,
+            "listingPrice": "Rs.7.9",
+            "date": "2023-01-05T06: 58: 18.000Z",
+            "growth": "-4.29%",
+            "perdaychage": 1.28
+          },
+          "ALOKINDS": {
+            "counter": 1,
+            "listingPrice": "Rs.15.5",
+            "date": "2023-01-06T05: 50: 42.000Z",
+            "growth": "-3.13%",
+            "perdaychage": 0.32
+          },
+          "VAKRANGEE": {
+            "counter": 1,
+            "listingPrice": "Rs.27.85",
+            "date": "2023-01-06T05: 29: 46.000Z",
+            "growth": "-8.26%",
+            "perdaychage": 0.36
+          }
+        };
+
+
+
+        let watchList = {
+          "GICRE": {
+              "counter": 2,
+              "listingPrice": "Rs. 195.45",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "34.44%",
+              "perdaychage": -2.79
+            },
+            "JSL": {
+              "counter": 2,
+              "listingPrice": "Rs. 236.65",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "34.27%",
+              "perdaychage": -1.54
+            },
+          "FACT": {
+              "counter": 2,
+              "listingPrice": "Rs. 367.2",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "141.45%",
+              "perdaychage": 3.77
+            },
+            "IOB": {
+              "counter": 2,
+              "listingPrice": "Rs. 31.5",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "42.06%",
+              "perdaychage": -0.79
+            },
+            "UCOBANK": {
+              "counter": 2,
+              "listingPrice": "Rs. 32.2",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "58.33%",
+              "perdaychage": -0.31
+            },
+            "NHPC": {
+              "counter": 1,
+              "listingPrice": "Rs. 39.95",
+              "date": "04-Jan-2023 11:20:46",
+              "growth": "-5.13%"
+            },
+          "NAVA": {
+              "counter": 2,
+              "listingPrice": "Rs. 245.1",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "33.14%",
+              "perdaychage": -0.65
+            },
+            "USHAMART": {
+              "counter": 2,
+              "listingPrice": "Rs. 179",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "35.08%",
+              "perdaychage": -0.67
+            },
+          "PSB": {
+              "counter": 2,
+              "listingPrice": "Rs. 32.65",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "32.4%",
+              "perdaychage": -1.36
+            },
+           "JINDWORLD": {
+              "counter": 1,
+              "listingPrice": "Rs. 450.4",
+              "date": "05-Jan-2023 11:20:46",
+              "growth": "30.38%",
+              "perdaychage": -2.19
+            }
+
+          };
+  let pennyWatchList = {
+          
+          
+          "STEELXIND": {
+            "counter": 1,
+            "listingPrice": "Rs. 14.85",
+            "date": "04-Jan-2023 11:20:46",
+            "growth": "8.24%"
+          },
+          "MOREPENLAB": {
+            "counter": 1,
+            "listingPrice": "Rs. 35.8",
+            "date": "04-Jan-2023 11:20:46",
+            "growth": "14.08%"
+          },
+          "SPICEJET": {
+            "counter": 2,
+            "listingPrice": "Rs. 38.6",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-3.9%",
+            "perdaychage": 1.05
+          },
+          "FILATEX": {
+            "counter": 1,
+            "listingPrice": "Rs. 45.95",
+            "date": "04-Jan-2023 11:20:46",
+            "growth": "-53.05%"
+          },
+          "GEOJITFSL": {
+            "counter": 1,
+            "listingPrice": "Rs. 48",
+            "date": "04-Jan-2023 11:20:46",
+            "growth": "0.63%"
+          },
+          
+          "SUBEXLTD": {
+            "counter": 2,
+            "listingPrice": "Rs. 34.55",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-1.74%",
+            "perdaychage": 2.07
+          },
+          
+          "VIKASWSP": {
+            "counter": 2,
+            "listingPrice": "Rs. 1.85",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-2.7%",
+            "perdaychage": 2.78
+          },
+          "UDAICEMENT": {
+            "counter": 1,
+            "listingPrice": "Rs. 32.35",
+            "date": "04-Jan-2023 11:20:46",
+            "growth": "-6.3%"
+          },
+          "TRIDENT": {
+            "counter": 1,
+            "listingPrice": "Rs. 34.1",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-9.81%",
+            "perdaychage": 0.29
+          },
+          "SJVN": {
+            "counter": 1,
+            "listingPrice": "Rs. 34.55",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-16.55%",
+            "perdaychage": 0.73
+          },
+          "RTNINDIA": {
+            "counter": 1,
+            "listingPrice": "Rs. 42.7",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-15.02%",
+            "perdaychage": 0.59
+          },
+          "GTLINFRA": {
+            "counter": 1,
+            "listingPrice": "Rs. 1.25",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-14.29%",
+            "perdaychage": 4.17
+          },
+          "JSWISPL": {
+            "counter": 1,
+            "listingPrice": "Rs. 31.75",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-2.48%",
+            "perdaychage": 0.95
+          },
+          "HCC": {
+            "counter": 1,
+            "listingPrice": "Rs. 20.7",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "7.03%",
+            "perdaychage": 0.73
+          },
+          "ELECTCAST": {
+            "counter": 1,
+            "listingPrice": "Rs. 38.35",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-5.11%",
+            "perdaychage": 0.66
+          },
+          "JISLJALEQS": {
+            "counter": 1,
+            "listingPrice": "Rs. 32.6",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-3.27%",
+            "perdaychage": 0.15
+          },
+          "BCG": {
+            "counter": 1,
+            "listingPrice": "Rs. 28.75",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-14.84%",
+            "perdaychage": 0.17
+          },
+          "DISHTV": {
+            "counter": 1,
+            "listingPrice": "Rs. 18.3",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-18.79%",
+            "perdaychage": 0.83
+          },
+          "IDEA": {
+            "counter": 1,
+            "listingPrice": "Rs. 7.9",
+            "date": "05-Jan-2023 11:20:46",
+            "growth": "-4.29%",
+            "perdaychage": 1.28
+          }
+        
+
+
+
+
+//// from eclipse
+
+let watchList = {
+        "GICRE": {
+            "counter": 3,
+            "listingPrice": "Rs.188.9",
+            "date": "06-Jan-2023 15:42:14",
+            "growth": "32.14%",
+            "perdaychage": -3.28
+          },
+          "JSL": {
+            "counter": 2,
+            "listingPrice": "Rs.236.65",
+            "date": "05-Jan-2023 15:42:14",
+            "growth": "34.27%",
+            "perdaychage": -1.54
+          },
+          "FACT": {
+            "counter": 3,
+            "listingPrice": "Rs.356.4",
+            "date": "06-Jan-2023 15:42:14",
+            "growth": "151.95%",
+            "perdaychage": -4.06
+          },
+        "IOB": {
+            "counter": 3,
+            "listingPrice": "Rs.31.2",
+            "date": "06-Jan-2023 15:42:14",
+            "growth": "37.17%",
+            "perdaychage": -1.11
+          },
+          "UCOBANK": {
+            "counter": 3,
+            "listingPrice": "Rs.31.25",
+            "date": "06-Jan-2023 15:42:14",
+            "growth": "52.25%",
+            "perdaychage": -2.95
+          },
+        "NAVA": {
+            "counter": 3,
+            "listingPrice": "Rs.255.2",
+            "date": "06-Jan-2023 15:42:14",
+            "growth": "32.87%",
+            "perdaychage": 3.4
+          },
+          "USHAMART": {
+            "counter": 3,
+            "listingPrice": "Rs.178.8",
+            "date": "06-Jan-2023 15:42:14",
+            "growth": "32.57%",
+            "perdaychage": -2.05
+          },
+        "PSB": {
+            "counter": 2,
+            "listingPrice": "Rs.32.65",
+            "date": "05-Jan-2023 15:42:14",
+            "growth": "32.4%",
+            "perdaychage": -1.36
+          },
+         "JINDWORLD": {
+            "counter": 1,
+            "listingPrice": "Rs.450.4",
+            "date": "05-Jan-2023 15:42:14",
+            "growth": "30.38%",
+            "perdaychage": -2.19
+          }
+        };
+let pennyWatchList = {
+        
+        
+        "NHPC": {
+          "counter": 2,
+          "listingPrice": "Rs.39.6",
+          "date": "06-Jan-2023 15:42:14",
+          "growth": "-9.15%",
+          "perdaychage": 1.02
+        },
+        "STEELXIND": {
+          "counter": 1,
+          "listingPrice": "Rs.14.85",
+          "date": "04-Jan-2023 15:42:14",
+          "growth": "8.24%"
+        },
+        "MOREPENLAB": {
+          "counter": 1,
+          "listingPrice": "Rs.35.8",
+          "date": "04-Jan-2023 15:42:14",
+          "growth": "14.08%"
+        },
+        "SPICEJET": {
+          "counter": 2,
+          "listingPrice": "Rs.38.6",
+          "date": "05-Jan-2023 15:42:14",
+          "growth": "-3.9%",
+          "perdaychage": 1.05
+        },
+        "FILATEX": {
+          "counter": 1,
+          "listingPrice": "Rs.45.95",
+          "date": "04-Jan-2023 15:42:14",
+          "growth": "-53.05%"
+        },
+        "GEOJITFSL": {
+          "counter": 1,
+          "listingPrice": "Rs.48",
+          "date": "04-Jan-2023 15:42:14",
+          "growth": "0.63%"
+        },
+        
+        "SUBEXLTD": {
+          "counter": 2,
+          "listingPrice": "Rs.34.55",
+          "date": "05-Jan-2023 15:42:14",
+          "growth": "-1.74%",
+          "perdaychage": 2.07
+        },
+        
+        "VIKASWSP": {
+          "counter": 2,
+          "listingPrice": "Rs.1.85",
+          "date": "06-Jan-2023 15:42:14",
+          "growth": "-2.7%",
+          "perdaychage": 2.78
+        },
+        "UDAICEMENT": {
+          "counter": 1,
+          "listingPrice": "Rs.32.35",
+          "date": "04-Jan-2023 15:42:14",
+          "growth": "-6.3%"
+        },
+        "TRIDENT": {
+          "counter": 1,
+          "listingPrice": "Rs.34.1",
+          "date": "2023-01-05T05: 02: 11.000Z",
+          "growth": "-9.81%",
+          "perdaychage": 0.29
+        },
+        "SJVN": {
+          "counter": 1,
+          "listingPrice": "Rs.34.55",
+          "date": "2023-01-05T05: 00: 43.000Z",
+          "growth": "-16.55%",
+          "perdaychage": 0.73
+        },
+        "RTNINDIA": {
+          "counter": 2,
+          "listingPrice": "Rs.42.9",
+          "date": "06-Jan-2023 15:42:14",
+          "growth": "-14.3%",
+          "perdaychage": 0.82
+        },
+        "GTLINFRA": {
+          "counter": 1,
+          "listingPrice": "Rs.1.25",
+          "date": "2023-01-05T05: 00: 45.000Z",
+          "growth": "-14.29%",
+          "perdaychage": 4.17
+        },
+        "JSWISPL": {
+          "counter": 1,
+          "listingPrice": "Rs.31.75",
+          "date": "2023-01-05T05: 00: 41.000Z",
+          "growth": "-2.48%",
+          "perdaychage": 0.95
+        },
+        "HCC": {
+          "counter": 2,
+          "listingPrice": "Rs.21.15",
+          "date": "2023-01-06T05: 29: 43.000Z",
+          "growth": "12.23%",
+          "perdaychage": 0.24
+        },
+        "ELECTCAST": {
+          "counter": 1,
+          "listingPrice": "Rs.38.35",
+          "date": "05-Jan-2023 15:42:14",
+          "growth": "-5.11%",
+          "perdaychage": 0.66
+        },
+        "JISLJALEQS": {
+          "counter": 1,
+          "listingPrice": "Rs.32.6",
+          "date": "05-Jan-2023 15:42:14",
+          "growth": "-3.27%",
+          "perdaychage": 0.15
+        },
+       
+        "BCG": {
+          "counter": 2,
+          "listingPrice": "Rs.28.7",
+          "date": "06-Jan-2023 15:42:14",
+          "growth": "-12.4%",
+          "perdaychage": 0.35
+        },
+        "DISHTV": {
+          "counter": 1,
+          "listingPrice": "Rs.18.3",
+          "date": "05-Jan-2023 15:42:14",
+          "growth": "-18.79%",
+          "perdaychage": 0.83
+        },
+        "IDEA": {
+          "counter": 1,
+          "listingPrice": "Rs.7.9",
+          "date": "05-Jan-2023 15:42:14",
+          "growth": "-4.29%",
+          "perdaychage": 1.28
+        },
+        "ALOKINDS": {
+          "counter": 1,
+          "listingPrice": "Rs.15.5",
+          "date": "06-Jan-2023 15:42:14",
+          "growth": "-3.13%",
+          "perdaychage": 0.32
+        },
+        "VAKRANGEE": {
+          "counter": 1,
+          "listingPrice": "Rs.27.85",
+          "date": "06-Jan-2023 15:42:14",
+          "growth": "-8.26%",
+          "perdaychage": 0.36
+        }
+      };
+
+
+
+
+//localstorage on Jan 11, 2023
+
+watchlist = "{"GICRE":{"counter":4,"listingPrice":"Rs. 180.05","date":"10-Jan-2023 15:59:55","growth":"31.23%","perdaychage":-3.38},"JSL":{"counter":2,"listingPrice":"Rs.236.65","date":"05-Jan-2023 15:42:14","growth":"34.27%","perdaychage":-1.54},"FACT":{"counter":6,"listingPrice":"Rs. 341.7","date":"11-Jan-2023 12:25:44","growth":"117.47%","perdaychage":-0.52},"IOB":{"counter":3,"listingPrice":"Rs.31.2","date":"06-Jan-2023 15:42:14","growth":"37.17%","perdaychage":-1.11},"UCOBANK":{"counter":5,"listingPrice":"Rs. 29.85","date":"10-Jan-2023 15:58:50","growth":"31.14%","perdaychage":-3.55},"NAVA":{"counter":6,"listingPrice":"Rs. 244.6","date":"11-Jan-2023 12:25:24","growth":"31.1%","perdaychage":0.82},"USHAMART":{"counter":6,"listingPrice":"Rs. 190.95","date":"11-Jan-2023 12:25:44","growth":"37.47%","perdaychage":5.35},"PSB":{"counter":2,"listingPrice":"Rs.32.65","date":"05-Jan-2023 15:42:14","growth":"32.4%","perdaychage":-1.36},"JINDWORLD":{"counter":1,"listingPrice":"Rs.450.4","date":"05-Jan-2023 15:42:14","growth":"30.38%","perdaychage":-2.19},"PNBHOUSING":{"counter":2,"listingPrice":"Rs. 563.4","date":"11-Jan-2023 12:25:42","growth":"30.88%","perdaychage":1.21}}";
+
+pennyWatchList = "{"NHPC":{"counter":2,"listingPrice":"Rs.39.6","date":"06-Jan-2023 15:42:14","growth":"-9.15%","perdaychage":1.02},"STEELXIND":{"counter":2,"listingPrice":"Rs. 15.25","date":"09-Jan-2023 15:40:36","growth":"8.99%","perdaychage":4.81},"MOREPENLAB":{"counter":3,"listingPrice":"Rs. 33.55","date":"11-Jan-2023 13:23:09","growth":"9.66%","perdaychage":0.15},"SPICEJET":{"counter":4,"listingPrice":"Rs. 37.5","date":"09-Dec-2022","growth":"-7.49%","perdaychage":1.21},"FILATEX":{"counter":3,"listingPrice":"Rs. 47.7","date":"10-Jan-2023 15:53:26","growth":"-50.42%","perdaychage":1.38},"GEOJITFSL":{"counter":3,"listingPrice":"Rs. 49.6","date":"10-Jan-2023 15:59:37","growth":"0.32%","perdaychage":5.2},"SUBEXLTD":{"counter":3,"listingPrice":"Rs. 35.8","date":"10-Jan-2023 15:59:58","growth":"10.73%","perdaychage":1.99},"VIKASWSP":{"counter":2,"listingPrice":"Rs.1.85","date":"06-Jan-2023 15:42:14","growth":"-2.7%","perdaychage":2.78},"UDAICEMENT":{"counter":2,"listingPrice":"Rs. 31.1","date":"09-Dec-2022","growth":"-9.24%","perdaychage":0.48},"TRIDENT":{"counter":3,"listingPrice":"Rs. 33.75","date":"11-Jan-2023 12:28:14","growth":"-7.03%","perdaychage":0.15},"SJVN":{"counter":1,"listingPrice":"Rs.34.55","date":"2023-01-05T05: 00: 43.000Z","growth":"-16.55%","perdaychage":0.73},"RTNINDIA":{"counter":2,"listingPrice":"Rs.42.9","date":"06-Jan-2023 15:42:14","growth":"-14.3%","perdaychage":0.82},"GTLINFRA":{"counter":1,"listingPrice":"Rs.1.25","date":"2023-01-05T05: 00: 45.000Z","growth":"-14.29%","perdaychage":4.17},"JSWISPL":{"counter":4,"listingPrice":"Rs. 31.95","date":"11-Jan-2023 12:25:43","growth":"0.95%","perdaychage":0.47},"HCC":{"counter":3,"listingPrice":"Rs. 19.9","date":"11-Jan-2023 12:25:40","growth":"-1.25%","perdaychage":0.51},"ELECTCAST":{"counter":3,"listingPrice":"Rs. 37.8","date":"11-Jan-2023 12:25:22","growth":"-4.83%","perdaychage":0.93},"JISLJALEQS":{"counter":4,"listingPrice":"Rs. 34.5","date":"11-Jan-2023 12:25:44","growth":"-2.68%","perdaychage":5.5},"BCG":{"counter":2,"listingPrice":"Rs.28.7","date":"06-Jan-2023 15:42:14","growth":"-12.4%","perdaychage":0.35},"DISHTV":{"counter":2,"listingPrice":"Rs. 18.35","date":"09-Jan-2023 15:42:17","growth":"-15.28%","perdaychage":0.27},"IDEA":{"counter":2,"listingPrice":"Rs. 7.35","date":"11-Jan-2023 12:25:13","growth":"-8.81%","perdaychage":1.38},"ALOKINDS":{"counter":3,"listingPrice":"Rs. 15.35","date":"11-Jan-2023 12:34:09","growth":"-3.5%","perdaychage":1.32},"VAKRANGEE":{"counter":2,"listingPrice":"Rs. 27.25","date":"11-Jan-2023 12:25:43","growth":"-0.37%","perdaychage":0.37},"YESBANK":{"counter":1,"listingPrice":"Rs. 21.2","date":"09-Jan-2023 15:45:14","growth":"7.11%","perdaychage":0.47},"GMRINFRA":{"counter":2,"listingPrice":"Rs. 40.75","date":"11-Jan-2023 12:28:13","growth":"-5.62%","perdaychage":1.12},"MAHABANK":{"counter":2,"listingPrice":"Rs. 30.05","date":"11-Jan-2023 12:34:11","growth":"3.66%","perdaychage":1.18},"NBCC":{"counter":2,"listingPrice":"Rs. 39","date":"11-Jan-2023 12:25:43","growth":"-3.73%","perdaychage":0.78},"MMTC":{"counter":2,"listingPrice":"Rs. 35.85","date":"11-Jan-2023 12:25:12","growth":"-9.14%","perdaychage":0.14},"SUZLON":{"counter":2,"listingPrice":"Rs. 10.25","date":"11-Jan-2023 12:25:45","growth":"8.06%","perdaychage":1.99},"RPOWER":{"counter":2,"listingPrice":"Rs. 14.35","date":"11-Jan-2023 13:23:08","growth":"-10.06%","perdaychage":0.35},"UJJIVANSFB":{"counter":1,"listingPrice":"Rs. 29.7","date":"09-Jan-2023 15:42:09","growth":"-4.4%","perdaychage":1.37},"RTNPOWER":{"counter":2,"listingPrice":"Rs. 3.9","date":"11-Jan-2023 13:23:08","growth":"-6.1%","perdaychage":1.3},"DEN":{"counter":3,"listingPrice":"Rs. 35","date":"11-Jan-2023 12:25:43","growth":"0.14%","perdaychage":0.57},"IFCI":{"counter":2,"listingPrice":"Rs. 13.9","date":"11-Jan-2023 12:25:44","growth":"-5.48%","perdaychage":0.72},"ANDREWYU":{"counter":3,"listingPrice":"Rs. 26.95","growth":"3.68%","perdaychage":0.75,"date":"09-Dec-2022"},"INFIBEAM":{"counter":2,"listingPrice":"Rs. 16.55","date":"11-Jan-2023 12:25:43","growth":"-6.07%","perdaychage":1.85},"IRFC":{"counter":1,"listingPrice":"Rs. 32.3","date":"11-Jan-2023 12:28:14","growth":"3.54%","perdaychage":0.47},"TV18BRDCST":{"counter":1,"listingPrice":"Rs. 36.95","date":"11-Jan-2023 12:34:14","growth":"-7.59%","perdaychage":1.09},"CENTRALBK":{"counter":1,"listingPrice":"Rs. 30.75","date":"11-Jan-2023 12:25:44","growth":"-9.05%","perdaychage":1.99},"UCOBANK":{"counter":1,"listingPrice":"Rs. 30.2","date":"11-Jan-2023 12:25:44","growth":"25.85%","perdaychage":1.68},"IOB":{"counter":1,"listingPrice":"Rs. 30","date":"11-Jan-2023 12:25:45","growth":"14.92%","perdaychage":1.18},"BAJAJHIND":{"counter":1,"listingPrice":"Rs. 16.4","date":"11-Jan-2023 12:25:22","growth":"1.29%","perdaychage":4.79},"JPPOWER":{"counter":1,"listingPrice":"Rs. 7.35","date":"11-Jan-2023 12:25:44","growth":"-3.33%","perdaychage":1.38},"JPASSOCIAT":{"counter":1,"listingPrice":"Rs. 9.9","date":"11-Jan-2023 12:25:44","growth":"-8.41%","perdaychage":1.02},"HATHWAY":{"counter":1,"listingPrice":"Rs. 17.05","date":"11-Jan-2023 12:25:36","growth":"0.3%","perdaychage":0.89},"PSB":{"counter":1,"listingPrice":"Rs. 31.85","date":"11-Jan-2023 12:25:12","growth":"-9.62%","perdaychage":4.26},"VISHAL":{"counter":1,"listingPrice":"Rs. 20.95","date":"09-Dec-2022","growth":"-6.32%","perdaychage":0.96}}";
+
+
+Jan 14
+pennyWatchList = "{"NHPC":{"counter":2,"listingPrice":"Rs.39.6","date":"06-Jan-2023 15:42:14","growth":"-9.15%","perdaychage":1.02},"STEELXIND":{"counter":3,"listingPrice":"Rs. 15.2","date":"13-Jan-2023 15:57:52","growth":"-1.36%","perdaychage":4.83},"MOREPENLAB":{"counter":3,"listingPrice":"Rs. 33.55","date":"11-Jan-2023 13:23:09","growth":"9.66%","perdaychage":0.15},"SPICEJET":{"counter":6,"listingPrice":"Rs. 37.25","date":"14-Dec-2022","growth":"-9.2%","perdaychage":0.27},"FILATEX":{"counter":4,"listingPrice":"Rs. 46.4","date":"13-Jan-2023 15:48:47","growth":"-51.24%","perdaychage":0.11},"GEOJITFSL":{"counter":3,"listingPrice":"Rs. 49.6","date":"10-Jan-2023 15:59:37","growth":"0.32%","perdaychage":5.2},"SUBEXLTD":{"counter":4,"listingPrice":"Rs. 36.2","date":"13-Jan-2023 15:57:33","growth":"10.41%","perdaychage":0.42},"VIKASWSP":{"counter":2,"listingPrice":"Rs.1.85","date":"06-Jan-2023 15:42:14","growth":"-2.7%","perdaychage":2.78},"UDAICEMENT":{"counter":2,"listingPrice":"Rs. 31.1","date":"09-Dec-2022","growth":"-9.24%","perdaychage":0.48},"TRIDENT":{"counter":4,"listingPrice":"Rs. 33.7","date":"13-Jan-2023 15:59:58","growth":"-7.3%","perdaychage":0.15},"SJVN":{"counter":2,"listingPrice":"Rs. 33.7","date":"13-Jan-2023 15:58:35","growth":"-12.68%","perdaychage":0.3},"RTNINDIA":{"counter":3,"listingPrice":"Rs. 42.4","date":"13-Jan-2023 15:59:02","growth":"-12.63%","perdaychage":1.68},"GTLINFRA":{"counter":2,"listingPrice":"Rs. 1.2","date":"13-Jan-2023 15:59:47","growth":"-8%","perdaychage":4.35},"JSWISPL":{"counter":5,"listingPrice":"Rs. 32.65","date":"13-Jan-2023 15:55:36","growth":"2.85%","perdaychage":0.62},"HCC":{"counter":4,"listingPrice":"Rs. 19.3","date":"13-Jan-2023 15:59:51","growth":"-7.71%","perdaychage":0.78},"ELECTCAST":{"counter":4,"listingPrice":"Rs. 37.7","date":"13-Jan-2023 15:59:44","growth":"-3.98%","perdaychage":0.8},"JISLJALEQS":{"counter":5,"listingPrice":"Rs. 34.15","date":"13-Jan-2023 15:56:36","growth":"-0.45%","perdaychage":1.94},"BCG":{"counter":2,"listingPrice":"Rs.28.7","date":"06-Jan-2023 15:42:14","growth":"-12.4%","perdaychage":0.35},"DISHTV":{"counter":3,"listingPrice":"Rs. 18.2","date":"13-Jan-2023 15:59:24","growth":"-15.96%","perdaychage":1.68},"IDEA":{"counter":2,"listingPrice":"Rs. 7.35","date":"11-Jan-2023 12:25:13","growth":"-8.81%","perdaychage":1.38},"ALOKINDS":{"counter":3,"listingPrice":"Rs. 15.35","date":"11-Jan-2023 12:34:09","growth":"-3.5%","perdaychage":1.32},"VAKRANGEE":{"counter":3,"listingPrice":"Rs. 27.35","date":"13-Jan-2023 15:57:12","growth":"-5.44%","perdaychage":1.48},"YESBANK":{"counter":2,"listingPrice":"Rs. 20.2","date":"13-Jan-2023 16:00:00","growth":"-16.91%","perdaychage":1.51},"GMRINFRA":{"counter":3,"listingPrice":"Rs. 41","date":"13-Jan-2023 15:59:24","growth":"-6.91%","perdaychage":1.49},"MAHABANK":{"counter":3,"listingPrice":"Rs. 31.65","date":"13-Jan-2023 15:59:51","growth":"-7.04%","perdaychage":1.12},"NBCC":{"counter":3,"listingPrice":"Rs. 39.45","date":"13-Jan-2023 15:59:55","growth":"-7.5%","perdaychage":1.94},"MMTC":{"counter":2,"listingPrice":"Rs. 35.85","date":"11-Jan-2023 12:25:12","growth":"-9.14%","perdaychage":0.14},"SUZLON":{"counter":3,"listingPrice":"Rs. 10.05","date":"13-Jan-2023 15:59:56","growth":"-7.8%","perdaychage":0.5},"RPOWER":{"counter":3,"listingPrice":"Rs. 14.15","date":"13-Jan-2023 15:59:56","growth":"-11.43%","perdaychage":1.43},"UJJIVANSFB":{"counter":1,"listingPrice":"Rs. 29.7","date":"09-Jan-2023 15:42:09","growth":"-4.4%","perdaychage":1.37},"RTNPOWER":{"counter":3,"listingPrice":"Rs. 3.95","date":"13-Jan-2023 15:59:55","growth":"-7.23%","perdaychage":2.6},"DEN":{"counter":4,"listingPrice":"Rs. 35.15","date":"13-Jan-2023 15:59:08","growth":"-1.83%","perdaychage":1.01},"IFCI":{"counter":2,"listingPrice":"Rs. 13.9","date":"11-Jan-2023 12:25:44","growth":"-5.48%","perdaychage":0.72},"ANDREWYU":{"counter":4,"listingPrice":"Rs. 26.55","growth":"-14.1%","perdaychage":0.19,"date":"14-Dec-2022"},"INFIBEAM":{"counter":3,"listingPrice":"Rs. 17.05","date":"13-Jan-2023 15:58:22","growth":"-11.89%","perdaychage":4.28},"IRFC":{"counter":2,"listingPrice":"Rs. 33.9","date":"13-Jan-2023 15:59:55","growth":"-3.11%","perdaychage":3.51},"TV18BRDCST":{"counter":1,"listingPrice":"Rs. 36.95","date":"11-Jan-2023 12:34:14","growth":"-7.59%","perdaychage":1.09},"CENTRALBK":{"counter":2,"listingPrice":"Rs. 30.8","date":"13-Jan-2023 15:58:54","growth":"-22.77%","perdaychage":1.82},"UCOBANK":{"counter":2,"listingPrice":"Rs. 30.1","date":"13-Jan-2023 15:59:49","growth":"-9.62%","perdaychage":0.67},"IOB":{"counter":2,"listingPrice":"Rs. 30.15","date":"13-Jan-2023 15:59:34","growth":"-7.4%","perdaychage":1.17},"BAJAJHIND":{"counter":1,"listingPrice":"Rs. 16.4","date":"11-Jan-2023 12:25:22","growth":"1.29%","perdaychage":4.79},"JPPOWER":{"counter":2,"listingPrice":"Rs. 7.3","date":"13-Jan-2023 15:59:16","growth":"-8.23%","perdaychage":0.69},"JPASSOCIAT":{"counter":1,"listingPrice":"Rs. 9.9","date":"11-Jan-2023 12:25:44","growth":"-8.41%","perdaychage":1.02},"HATHWAY":{"counter":1,"listingPrice":"Rs. 17.05","date":"11-Jan-2023 12:25:36","growth":"0.3%","perdaychage":0.89},"PSB":{"counter":2,"listingPrice":"Rs. 31.4","date":"13-Jan-2023 15:56:36","growth":"-24.6%","perdaychage":1.95},"VISHAL":{"counter":1,"listingPrice":"Rs. 20.95","date":"09-Dec-2022","growth":"-6.32%","perdaychage":0.96},"SOUTHBANK":{"counter":1,"listingPrice":"Rs. 18.75","date":"13-Jan-2023 15:59:55","growth":"-6.65%","perdaychage":2.74},"VIKASPROP":{"counter":1,"listingPrice":"Rs. 0.75","growth":"-6.25%","perdaychage":7.14}}"
+
+watchlist = "{"GICRE":{"counter":4,"listingPrice":"Rs. 180.05","date":"10-Jan-2023 15:59:55","growth":"31.23%","perdaychage":-3.38},"JSL":{"counter":2,"listingPrice":"Rs.236.65","date":"05-Jan-2023 15:42:14","growth":"34.27%","perdaychage":-1.54},"FACT":{"counter":7,"listingPrice":"Rs. 321.8","date":"13-Jan-2023 15:59:51","growth":"72.19%","perdaychage":-3.42},"IOB":{"counter":3,"listingPrice":"Rs.31.2","date":"06-Jan-2023 15:42:14","growth":"37.17%","perdaychage":-1.11},"UCOBANK":{"counter":5,"listingPrice":"Rs. 29.85","date":"10-Jan-2023 15:58:50","growth":"31.14%","perdaychage":-3.55},"NAVA":{"counter":7,"listingPrice":"Rs. 247.5","date":"13-Jan-2023 15:59:57","growth":"33.26%","perdaychage":2.87},"USHAMART":{"counter":7,"listingPrice":"Rs. 181.85","date":"13-Jan-2023 15:59:57","growth":"36.77%","perdaychage":-0.44},"PSB":{"counter":2,"listingPrice":"Rs.32.65","date":"05-Jan-2023 15:42:14","growth":"32.4%","perdaychage":-1.36},"JINDWORLD":{"counter":1,"listingPrice":"Rs.450.4","date":"05-Jan-2023 15:42:14","growth":"30.38%","perdaychage":-2.19},"PNBHOUSING":{"counter":3,"listingPrice":"Rs. 575","date":"13-Jan-2023 15:57:52","growth":"32.68%","perdaychage":-2.19},"MAHINDCIE":{"counter":1,"listingPrice":"Rs. 377.65","date":"13-Jan-2023 15:59:30","growth":"31.47%","perdaychage":5.83},"JBMA":{"counter":1,"listingPrice":"Rs. 534","date":"13-Jan-2023 15:59:57","growth":"30.16%","perdaychage":2.02}}"
+
+
+
+
+
+

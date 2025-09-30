@@ -1,0 +1,255 @@
+<html>
+<script type="text/javascript">
+	Date.prototype.sameDay = function(d) {
+	  return this.getFullYear() === d.getFullYear()
+	    && this.getDate() === d.getDate()
+	    && this.getMonth() === d.getMonth();
+	}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<body>
+	<select aria-labelledby="liveMrktStockSelLbl" id="equitieStockSelect" class="no-border-radius">
+		<optgroup label="Broad Market Indices">
+			<option rel="equity" value="NIFTY 50" selected="selected">NIFTY 50</option>
+			<option rel="equity" value="NIFTY NEXT 50">NIFTY NEXT 50</option>
+			<option rel="equity" value="NIFTY MIDCAP 50">NIFTY MIDCAP 50</option>
+			<option rel="equity" value="NIFTY MIDCAP 100">NIFTY MIDCAP 100</option>
+			<option rel="equity" value="NIFTY MIDCAP 150">NIFTY MIDCAP 150</option>
+			<option rel="equity" value="NIFTY SMALLCAP 50">NIFTY SMALLCAP 50</option>
+			<option rel="equity" value="NIFTY SMALLCAP 100">NIFTY SMALLCAP 100</option>
+			<option rel="equity" value="NIFTY SMALLCAP 250">NIFTY SMALLCAP 250</option>
+			<option rel="equity" value="NIFTY MIDSMALLCAP 400">NIFTY MIDSMALLCAP 400</option>
+			<option rel="equity" value="NIFTY 100">NIFTY 100</option>
+			<option rel="equity" value="NIFTY 200">NIFTY 200</option>
+			<option rel="equity" value="NIFTY 500">NIFTY 500</option>
+			<option rel="equity" value="NIFTY500 MULTICAP 50:25:25">NIFTY500 MULTICAP 50:25:25</option>
+			<option rel="equity" value="NIFTY LARGEMIDCAP 250">NIFTY LARGEMIDCAP 250</option>
+			<option rel="equity" value="NIFTY MIDCAP SELECT">NIFTY MIDCAP SELECT</option>
+			<option rel="equity" value="NIFTY TOTAL MARKET">NIFTY TOTAL MARKET</option>
+			<option rel="equity" value="NIFTY MICROCAP 250">NIFTY MICROCAP 250</option>
+		</optgroup>
+		 <optgroup label="Sectoral Indices">
+			<option rel="equity" value="NIFTY AUTO">NIFTY AUTO</option>
+			<option rel="equity" value="NIFTY BANK">NIFTY BANK</option>
+			<option rel="equity" value="NIFTY ENERGY">NIFTY ENERGY</option>
+			<option rel="equity" value="NIFTY FINANCIAL SERVICES">NIFTY FINANCIAL SERVICES</option>
+			<option rel="equity" value="NIFTY FINANCIAL SERVICES 25/50">NIFTY FINANCIAL SERVICES 25/50</option>
+			<option rel="equity" value="NIFTY FMCG">NIFTY FMCG</option>
+			<option rel="equity" value="NIFTY IT">NIFTY IT</option>
+			<option rel="equity" value="NIFTY MEDIA">NIFTY MEDIA</option>
+			<option rel="equity" value="NIFTY METAL">NIFTY METAL</option>
+			<option rel="equity" value="NIFTY PHARMA">NIFTY PHARMA</option>
+			<option rel="equity" value="NIFTY PSU BANK">NIFTY PSU BANK</option>
+			<option rel="equity" value="NIFTY REALTY">NIFTY REALTY</option>
+			<option rel="equity" value="NIFTY PRIVATE BANK">NIFTY PRIVATE BANK</option>
+			<option rel="equity" value="NIFTY HEALTHCARE INDEX">NIFTY HEALTHCARE INDEX</option>
+			<option rel="equity" value="NIFTY CONSUMER DURABLES">NIFTY CONSUMER DURABLES</option>
+			<option rel="equity" value="NIFTY OIL & GAS">NIFTY OIL & GAS</option>
+		</optgroup>
+		<optgroup label="Thematic Indices">
+			<option rel="equity" value="NIFTY COMMODITIES">NIFTY COMMODITIES</option>
+			<option rel="equity" value="NIFTY INDIA CONSUMPTION">NIFTY INDIA CONSUMPTION</option>
+			<option rel="equity" value="NIFTY CPSE">NIFTY CPSE</option>
+			<option rel="equity" value="NIFTY INFRASTRUCTURE">NIFTY INFRASTRUCTURE</option>
+			<option rel="equity" value="NIFTY MNC">NIFTY MNC</option>
+			<option rel="equity" value="NIFTY GROWTH SECTORS 15">NIFTY GROWTH SECTORS 15</option>
+			<option rel="equity" value="NIFTY PSE">NIFTY PSE</option>
+			<option rel="equity" value="NIFTY SERVICES SECTOR">NIFTY SERVICES SECTOR</option>
+			<option rel="equity" value="NIFTY100 LIQUID 15">NIFTY100 LIQUID 15</option>
+			<option rel="equity" value="NIFTY MIDCAP LIQUID 15">NIFTY MIDCAP LIQUID 15</option>
+			<option rel="equity" value="NIFTY INDIA DIGITAL">NIFTY INDIA DIGITAL</option>
+			<option rel="equity" value="NIFTY100 ESG">NIFTY100 ESG</option>
+			<option rel="equity" value="NIFTY INDIA MANUFACTURING">NIFTY INDIA MANUFACTURING</option>
+		</optgroup>
+		<optgroup label="Strategy Indices">
+			<option rel="equity" value="NIFTY DIVIDEND OPPORTUNITIES 50">NIFTY DIVIDEND OPPORTUNITIES 50</option>
+			<option rel="equity" value="NIFTY50 VALUE 20">NIFTY50 VALUE 20</option>
+			<option rel="equity" value="NIFTY100 QUALITY 30">NIFTY100 QUALITY 30</option>
+			<option rel="equity" value="NIFTY50 EQUAL WEIGHT">NIFTY50 EQUAL WEIGHT</option>
+			<option rel="equity" value="NIFTY100 EQUAL WEIGHT">NIFTY100 EQUAL WEIGHT</option>
+			<option rel="equity" value="NIFTY100 LOW VOLATILITY 30">NIFTY100 LOW VOLATILITY 30</option>
+			<option rel="equity" value="NIFTY ALPHA 50">NIFTY ALPHA 50</option>
+			<option rel="equity" value="NIFTY200 QUALITY 30">NIFTY200 QUALITY 30</option>
+			<option rel="equity" value="NIFTY ALPHA LOW-VOLATILITY 30">NIFTY ALPHA LOW-VOLATILITY 30</option>
+			<option rel="equity" value="NIFTY200 MOMENTUM 30">NIFTY200 MOMENTUM 30</option>
+			<option rel="equity" value="NIFTY MIDCAP150 QUALITY 50">NIFTY MIDCAP150 QUALITY 50</option>
+		</optgroup>
+		<optgroup label="Others">
+			<option rel="equity" value="SECURITIES IN F&O">SECURITIES IN F&O</option>
+			<option rel="equity" value="PERMITTED TO TRADE">Permitted to Trade</option>
+		</optgroup>
+	</select>
+</body>
+<script>
+	    
+	
+
+	let watchList = {};
+	let pennyWatchList = {};
+	let stockList = {};
+	let stockListArray = [];
+
+
+	 if(localStorage.getItem('watchList') === null){
+		localStorage.setItem('watchList', JSON.stringify(watchList));
+	}else{
+		watchList = JSON.parse(localStorage.getItem('watchList'));
+	}
+	
+	if(localStorage.getItem('pennyWatchList') === null){
+		localStorage.setItem('pennyWatchList', JSON.stringify(pennyWatchList));
+	}else{
+	    pennyWatchList = JSON.parse(localStorage.getItem('pennyWatchList'));
+	}
+
+	//setInterval(storeStocksData, 120000);
+	storeStocksData();
+	
+	function storeStocksData(){
+		let date = new Date();
+		let hours = date.getHours();
+		let day = date.getDay();
+
+		if(day===1 || day===2 || day===3 || day===4 || day===5){
+			for(let i=0; i<document.getElementsByTagName('option').length; i++){
+						
+				// fetch data between 11am to 8pm
+				if(hours >= 15 && hours<= 23 && (localStorage.getItem(document.getElementsByTagName('option')[i].value) === null)){
+					stocksData(document.getElementsByTagName('option')[i].value);
+				}
+
+
+				// clear localstorage before 11am
+
+				if(hours >= 8 && hours<= 10 && localStorage.getItem(document.getElementsByTagName('option')[i].value)){
+					localStorage.removeItem(document.getElementsByTagName('option')[i].value);
+				}
+
+			}
+
+			// create watchlist at 10pm
+			if(hours >= 23 && hours<= 24){
+				//fetchLocalStorageData();
+			}
+		}
+
+	}
+
+	
+
+	
+
+	function stocksData(index){
+
+	    $.ajax({
+            type: 'GET',
+            url: "https://www.nseindia.com/api/equity-stockIndices?index="+index,
+            async:false,
+            success:function(data){
+	             if(localStorage.getItem(index) === null){
+		    		localStorage.setItem(index, JSON.stringify(data.data));
+		    	}else{
+		    		if(new Date(JSON.parse(localStorage.getItem(index))[0].lastUpdateTime).sameDay(new Date)){
+		    			console.log('same day ka data')
+		    		}else{
+
+		    		}
+		    	}
+            },
+			error: function (error) {
+			  //  window.open("https://www.nseindia.com/api/equity-stockIndices?index="+index, '_blank');
+			}
+        });
+
+
+	
+	};
+
+	function fetchLocalStorageData(){
+		for(let i=0; i<document.getElementsByTagName('option').length; i++){
+		  if(i===(document.getElementsByTagName('option').length-1)){
+		  	setTimeout(function(){
+		  		//localStorage.setItem('watchList', JSON.stringify(watchList));
+		  		//localStorage.setItem('pennyWatchList', JSON.stringify(pennyWatchList));
+		  	},10000)
+		  }
+		  parseLocalData(document.getElementsByTagName('option')[i].value)
+		}
+	}
+
+	function parseLocalData(index){
+		if(localStorage.getItem(index)){
+			createWatchList(JSON.parse(localStorage.getItem(index)));
+		}
+		
+	}
+	
+	function createWatchList(rawData){
+
+
+		for(let i=0; i<rawData.length; i++){
+
+			if(stockList[rawData[i].symbol] === undefined){
+				stockList[rawData[i].symbol] = true;
+				stockListArray.push(rawData[i].symbol);
+			}
+
+
+		    if(rawData[i].pChange > 0 && rawData[i].lastPrice < 50){
+
+		    	if(pennyWatchList[rawData[i].symbol] === undefined){
+		    	    pennyWatchList[rawData[i].symbol] = {
+			        	'counter':1, 
+			        	'listingPrice':'Rs. '+rawData[i].lastPrice,
+			        	'date':rawData[i].lastUpdateTime, 
+			        	'growth':rawData[i].perChange30d+'%',
+			        	'perdaychage':rawData[i].pChange
+			        }
+		    	}else if(new Date(rawData[i].lastUpdateTime).sameDay(new Date(pennyWatchList[rawData[i].symbol].date))){
+		    		console.log('penny same day')
+
+		    	}else{
+		    	    pennyWatchList[rawData[i].symbol].counter = pennyWatchList[rawData[i].symbol].counter +1;
+		    	    pennyWatchList[rawData[i].symbol].date = rawData[i].lastUpdateTime ? rawData[i].lastUpdateTime:rawData[i].date30dAgo;
+		    	    pennyWatchList[rawData[i].symbol].listingPrice = 'Rs. '+rawData[i].lastPrice;
+		    	    pennyWatchList[rawData[i].symbol].growth = rawData[i].perChange30d+'%';
+		    	    pennyWatchList[rawData[i].symbol].perdaychage = rawData[i].pChange;
+					if(pennyWatchList[rawData[i].symbol].counter > 6){
+						alert('kharid lo, price is');
+					}
+	    		}
+		    }
+		   
+
+		    if(rawData[i].perChange30d > 30){
+
+		    	if(watchList[rawData[i].symbol] === undefined){
+					watchList[rawData[i].symbol] = {
+			        	'counter':1, 
+			        	'listingPrice':'Rs. '+rawData[i].lastPrice,
+			        	'date':rawData[i].lastUpdateTime, 
+			        	'growth':rawData[i].perChange30d+'%',
+			        	'perdaychage':rawData[i].pChange
+			        }
+		    	}else if(new Date(rawData[i].lastUpdateTime).sameDay(new Date(watchList[rawData[i].symbol].date))){
+		    		console.log('growth same day')
+
+		    	}else{
+	    			watchList[rawData[i].symbol].counter = watchList[rawData[i].symbol].counter +1;
+	    			watchList[rawData[i].symbol].date = rawData[i].lastUpdateTime ? rawData[i].lastUpdateTime:rawData[i].date30dAgo;
+	    			watchList[rawData[i].symbol].listingPrice = 'Rs. '+rawData[i].lastPrice;
+	    			watchList[rawData[i].symbol].growth = rawData[i].perChange30d+'%';
+	    			watchList[rawData[i].symbol].perdaychage = rawData[i].pChange;
+					if(watchList[rawData[i].symbol].counter > 6){
+						alert('kharid lo, price is');
+					}
+	    		}
+		    }
+		}
+
+	}
+	
+
+</script>
+
+</html>
